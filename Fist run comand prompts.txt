@@ -1,0 +1,1137 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Installieren Sie die neueste PowerShell für neue Funktionen und Verbesserungen! https://aka.ms/PSWindows
+
+PS Microsoft.PowerShell.Core\FileSystem::\\wsl.localhost\Ubuntu\home\flad\smerf> wsl
+flad@FladStand:~/smerf$ cd ..
+flad@FladStand:~$ source env311/bin/activate
+(env311) flad@FladStand:~$ cd smerf/
+(env311) flad@FladStand:~/smerf$ ./scripts/demo.sh
+2024-12-12 10:14:32.120061: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1733994872.178684     543 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1733994872.196386     543 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+I1212 10:14:35.474852 139818628030464 train.py:61] main() has started!
+I1212 10:14:35.627397 139818628030464 xla_bridge.py:660] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: CUDA
+I1212 10:14:35.628278 139818628030464 xla_bridge.py:660] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+I1212 10:14:35.629033 139818628030464 train.py:83] Loading Gin config...
+I1212 10:14:35.662357 139818628030464 train.py:102] Loading dataset...
+*** using 4x downsampled images
+*** Finding COLMAP data
+*** Constructing NeRF Scene Manager
+Warning: image_path not found for reconstruction
+*** Processing COLMAP data
+*** Loaded camera parameters for 194 images
+*** image names sorted alphabetically
+*** Loading images from datasets/bicycle/images_4
+*** Loaded 194 images from disk
+*** Loaded EXIF data for 194 images
+*** Constructed COLMAP-to-world transform.
+*** Constructed 50 render poses via ellipse path
+*** Constructed train/test split: #train=169 #test=25
+*** LLFF successfully loaded!
+*** split=DataSplit.TRAIN
+*** #images/poses/exposures=169
+*** #camtoworlds=169
+*** resolution=(822, 1237)
+*** using 4x downsampled images
+*** Finding COLMAP data
+*** Constructing NeRF Scene Manager
+Warning: image_path not found for reconstruction
+*** Processing COLMAP data
+*** Loaded camera parameters for 194 images
+*** image names sorted alphabetically
+*** Loading images from datasets/bicycle/images_4
+*** Loaded 194 images from disk
+*** Loaded EXIF data for 194 images
+*** Constructed COLMAP-to-world transform.
+*** Constructed 50 render poses via ellipse path
+*** Constructed train/test split: #train=169 #test=25
+*** LLFF successfully loaded!
+*** split=DataSplit.TEST
+*** #images/poses/exposures=25
+*** #camtoworlds=25
+*** resolution=(822, 1237)
+*** using 4x downsampled images
+*** Finding COLMAP data
+*** Constructing NeRF Scene Manager
+Warning: image_path not found for reconstruction
+*** Processing COLMAP data
+*** Loaded camera parameters for 194 images
+*** image names sorted alphabetically
+*** Loading images from datasets/bicycle/images_4
+*** Loaded 194 images from disk
+*** Loaded EXIF data for 194 images
+*** Constructed COLMAP-to-world transform.
+*** Constructed 50 render poses via ellipse path
+*** Constructed train/test split: #train=169 #test=25
+*** LLFF successfully loaded!
+*** split=DataSplit.TEST
+*** #images/poses/exposures=25
+*** #camtoworlds=50
+*** resolution=(822, 1237)
+I1212 10:14:52.329254 139818628030464 grid_utils.py:225] 1 of 1 possible submodels have at least one training camera assigned to them.
+I1212 10:14:52.329690 139818628030464 grid_utils.py:310] grid_config initialized:
+{'num_local_submodels': 1,
+ 'num_submodel_hash_encoding_kernels': 1,
+ 'num_submodel_mlp_kernels': 1,
+ 'num_submodels': 1,
+ 'params_to_sm': (0,),
+ 'resolution_to_use': 512,
+ 'sm_to_params': (0,),
+ 'sparse_grid_voxel_size': 0.015625,
+ 'submodel_idx_override': None,
+ 'submodel_scale': 2.5,
+ 'submodel_voxel_size': 2.0,
+ 'submodels_on_host': (0,),
+ 'triplane_voxel_size': 0.0078125,
+ 'voxel_size_to_use': 0.0078125}
+I1212 10:14:52.345640 139818628030464 train.py:129] Loading teacher...
+I1212 10:15:15.197371 139818628030464 checkpoints.py:1062] Restoring orbax checkpoint from teachers/bicycle/checkpoint_50000
+I1212 10:15:15.199148 139818628030464 checkpointer.py:166] Restoring item from teachers/bicycle/checkpoint_50000.
+W1212 10:15:18.215296 139818628030464 transform_utils.py:229] The transformations API will eventually be replaced by an upgraded design. The current API will not be removed until this point, but it will no longer be actively worked on.
+I1212 10:15:18.245064 139818628030464 checkpointer.py:169] Finished restoring checkpoint from teachers/bicycle/checkpoint_50000.
+I1212 10:15:18.246203 139818628030464 train.py:137] teacher step: 50000
+I1212 10:15:18.246320 139818628030464 train.py:140] Initializing MERF...
+I1212 10:15:19.613911 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:15:21.120886 139818628030464 models.py:582] Instantiating DeferredMLP...
+I1212 10:15:22.583949 139818628030464 train_utils.py:1238] Model Variables: size: 119.095089 MB
+I1212 10:15:23.449366 139818628030464 train_utils.py:1247] Optimizer State: size: 476.380371 MB
+I1212 10:15:23.451668 139818628030464 checkpoints.py:1052] Found no checkpoint files in /home/flad/smerf/checkpoints/20241212_1014-demo with prefix checkpoint_
+I1212 10:15:23.652565 139818628030464 train.py:153] Loaded checkpoint from /home/flad/smerf/checkpoints/20241212_1014-demo, step: 0
+I1212 10:15:23.793053 139818628030464 train.py:177] Entering train()...
+I1212 10:15:37.769898 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:15:39.612532 139818628030464 models.py:582] Instantiating DeferredMLP...
+I1212 10:15:40.171316 139818628030464 train_utils.py:948] Sampling random positions...
+I1212 10:15:40.190470 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:15:41.395128 139818628030464 train_utils.py:973] Making predictions for distillation...
+I1212 10:15:41.395287 139818628030464 train_utils.py:798] Using teacher tdist values...
+I1212 10:15:41.395610 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:15:43.177804 139818628030464 models.py:582] Instantiating DeferredMLP...
+I1212 10:15:43.674523 139818628030464 train_utils.py:1029] Applying Data Loss...
+I1212 10:15:43.683092 139818628030464 train_utils.py:1038] Applying Distortion Loss...
+I1212 10:15:43.695227 139818628030464 train_utils.py:1042] Applying Param Regularizers...
+W1212 10:15:43.888056 139818628030464 train_utils.py:380] The following regularizers were not used:
+['MultiPropMLP_0/MultiPropHashEncoding_0']
+
+The following variable names are available for regularization:
+dict_keys([('DeferredMLP_0', 'ResampleDense_0', 'bias'), ('DeferredMLP_0', 'ResampleDense_0', 'kernel'), ('DeferredMLP_0', 'ResampleDense_1', 'bias'), ('DeferredMLP_0', 'ResampleDense_1', 'kernel'), ('DeferredMLP_0', 'ResampleDense_2', 'bias'), ('DeferredMLP_0', 'ResampleDense_2', 'kernel'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_16'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_22'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_31'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_43'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_59'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'grid_83'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_1142'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_115'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_1586'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_159'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_2203'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_221'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_3059'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_307'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_4248'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_427'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_5899'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_592'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_8192'), ('MultiDensityAndFeaturesMLP_0', 'MultiHashEncoding_0', 'hash_823'), ('MultiDensityAndFeaturesMLP_0', 'MultiMLP_0', 'MultiDense_0', 'bias'), ('MultiDensityAndFeaturesMLP_0', 'MultiMLP_0', 'MultiDense_0', 'kernel'), ('MultiDensityAndFeaturesMLP_0', 'MultiMLP_0', 'MultiDense_1', 'bias'), ('MultiDensityAndFeaturesMLP_0', 'MultiMLP_0', 'MultiDense_1', 'kernel')])
+I1212 10:15:43.888233 139818628030464 train_utils.py:1046] Applying TV regularizer for Grid MLP...
+I1212 10:15:43.979008 139818628030464 train_utils.py:1054] Applying Yu Sparsity loss...
+I1212 10:15:44.012028 139818628030464 train_utils.py:1067] Applying Distill Geometry loss...
+I1212 10:15:44.065311 139818628030464 train_utils.py:1079] Applying Distill RGB loss...
+I1212 10:15:44.077132 139818628030464 train_utils.py:1092] Applying Distill SSIM loss...
+I1212 10:16:14.080959 139818628030464 train.py:272] Iteration: 0, iters/sec: n/a
+/home/flad/smerf/smerf/train.py:276: RuntimeWarning: divide by zero encountered in log10
+  f'{k}: {-10*np.log10(v):.3f}'
+I1212 10:16:14.082808 139818628030464 train.py:273] data: inf deferred_mlp_tv_regularizer: 38.588 distill_geom_loss: 16.788 distill_rgb_loss: 1.824 distill_ssim_loss: 1.667 distortion: 33.460 regularizer: 114.771 yu_sparsity_loss: 37.159
+I1212 10:16:14.167249 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 10:17:12.369126 139818628030464 models.py:1053] Rendering chunk 3178/31776, 1747 rays/sec
+I1212 10:17:58.830780 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2188 rays/sec
+I1212 10:18:47.736446 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2079 rays/sec
+I1212 10:19:34.732875 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2163 rays/sec
+I1212 10:20:28.705693 139818628030464 models.py:1053] Rendering chunk 15886/31776, 1884 rays/sec
+I1212 10:21:28.216137 139818628030464 models.py:1053] Rendering chunk 19063/31776, 1708 rays/sec
+I1212 10:22:23.065114 139818628030464 models.py:1053] Rendering chunk 22240/31776, 1854 rays/sec
+I1212 10:23:12.370807 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2062 rays/sec
+I1212 10:23:59.698312 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2148 rays/sec
+I1212 10:24:46.986009 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2150 rays/sec
+I1212 10:27:15.054805 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:27:16.048887 139818628030464 models.py:582] Instantiating DeferredMLP...
+I1212 10:34:00.433494 139818628030464 models.py:376] Instantiating MultiDensityAndFeaturesMLP...
+I1212 10:34:02.211097 139818628030464 models.py:582] Instantiating DeferredMLP...
+I1212 10:43:39.246496 139818628030464 train.py:272] Iteration: 100, iters/sec: 0.17714090352264547
+/home/flad/smerf/smerf/train.py:276: RuntimeWarning: divide by zero encountered in log10
+  f'{k}: {-10*np.log10(v):.3f}'
+I1212 10:43:39.246982 139818628030464 train.py:273] data: inf deferred_mlp_tv_regularizer: 33.427 distill_geom_loss: 19.285 distill_rgb_loss: 8.724 distill_ssim_loss: 2.222 distortion: 42.174 regularizer: 45.688 yu_sparsity_loss: 41.713
+I1212 10:52:46.683599 139818628030464 train.py:272] Iteration: 200, iters/sec: 0.18000824017299266
+I1212 10:52:46.683824 139818628030464 train.py:273] data: inf deferred_mlp_tv_regularizer: 33.033 distill_geom_loss: 28.490 distill_rgb_loss: 10.296 distill_ssim_loss: 4.530 distortion: 43.816 regularizer: 44.992 yu_sparsity_loss: 39.880
+I1212 10:52:46.683888 139818628030464 train.py:339] Saving checkpoint 200
+I1212 10:52:46.686410 139818628030464 checkpoints.py:567] Saving checkpoint at step: 200
+I1212 10:52:46.686540 139818628030464 checkpoints.py:635] Using Orbax as backend to save Flax checkpoints. For potential troubleshooting see: https://flax.readthedocs.io/en/latest/guides/use_checkpointing.html#orbax-as-backend-troubleshooting
+W1212 10:52:46.686752 139818628030464 type_handlers.py:404] SaveArgs.aggregate is deprecated, please use custom TypeHandler (https://orbax.readthedocs.io/en/latest/custom_handlers.html#typehandler) or contact Orbax team to migrate before May 1st, 2024.
+I1212 10:52:46.687127 139818628030464 checkpointer.py:135] Saving item to /home/flad/smerf/checkpoints/20241212_1014-demo/checkpoint_200.
+I1212 10:52:47.956081 139818628030464 utils.py:564] Renaming /home/flad/smerf/checkpoints/20241212_1014-demo/checkpoint_200.orbax-checkpoint-tmp-1733997166687217 to /home/flad/smerf/checkpoints/20241212_1014-demo/checkpoint_200
+I1212 10:52:47.956325 139818628030464 utils.py:617] Finished saving checkpoint to `/home/flad/smerf/checkpoints/20241212_1014-demo/checkpoint_200`.
+I1212 10:52:47.978942 139818628030464 train.py:371] rendering dataset_type='test'...
+I1212 10:52:48.633036 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 10:53:31.352586 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2380 rays/sec
+I1212 10:54:15.611428 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2297 rays/sec
+I1212 10:54:58.222032 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2386 rays/sec
+I1212 10:55:40.963156 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2379 rays/sec
+I1212 10:56:23.245086 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2404 rays/sec
+I1212 10:57:06.767923 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2336 rays/sec
+I1212 10:57:49.046426 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2405 rays/sec
+I1212 10:58:31.263562 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2408 rays/sec
+I1212 10:59:14.662621 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2343 rays/sec
+I1212 10:59:56.876925 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2408 rays/sec
+I1212 11:07:09.324910 139818628030464 train.py:473] gt image#=0 {'psnr': 14.75771713256836, 'ssim': 0.21851719915866852}
+I1212 11:07:09.344211 139818628030464 train.py:473] teacher image#=0 {'psnr': 16.021486282348633, 'ssim': 0.3067013919353485}
+I1212 11:07:09.416865 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 11:07:51.883439 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2394 rays/sec
+I1212 11:08:34.249688 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2400 rays/sec
+I1212 11:09:17.774770 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2336 rays/sec
+I1212 11:10:00.084988 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2403 rays/sec
+I1212 11:10:42.226632 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2412 rays/sec
+I1212 11:11:24.329711 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2415 rays/sec
+I1212 11:12:07.844028 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2336 rays/sec
+I1212 11:12:49.836222 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2421 rays/sec
+I1212 11:13:31.395293 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2446 rays/sec
+I1212 11:14:13.247709 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2429 rays/sec
+I1212 11:21:20.587814 139818628030464 train.py:473] gt image#=1 {'psnr': 14.223824501037598, 'ssim': 0.2147999256849289}
+I1212 11:21:20.612150 139818628030464 train.py:473] teacher image#=1 {'psnr': 15.046716690063477, 'ssim': 0.3065812885761261}
+I1212 11:21:20.683999 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 11:22:03.458706 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2377 rays/sec
+I1212 11:22:47.065294 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2331 rays/sec
+I1212 11:23:29.296907 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2407 rays/sec
+I1212 11:24:11.460112 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2411 rays/sec
+I1212 11:24:55.030901 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2333 rays/sec
+I1212 11:25:36.938269 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2426 rays/sec
+I1212 11:26:18.818936 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2427 rays/sec
+I1212 11:27:00.509033 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2439 rays/sec
+I1212 11:27:43.634156 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2357 rays/sec
+I1212 11:28:25.740007 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2414 rays/sec
+I1212 11:35:28.173182 139818628030464 train.py:473] gt image#=2 {'psnr': 15.631438255310059, 'ssim': 0.22973182797431946}
+I1212 11:35:28.199826 139818628030464 train.py:473] teacher image#=2 {'psnr': 16.473474502563477, 'ssim': 0.32392340898513794}
+I1212 11:35:28.273295 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 11:36:12.407430 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2304 rays/sec
+I1212 11:36:54.746075 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2401 rays/sec
+I1212 11:37:36.935570 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2410 rays/sec
+I1212 11:38:18.870861 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2424 rays/sec
+I1212 11:39:02.213264 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2346 rays/sec
+I1212 11:39:44.127356 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2426 rays/sec
+I1212 11:40:25.922837 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2432 rays/sec
+I1212 11:41:08.923295 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2364 rays/sec
+I1212 11:41:50.827746 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2426 rays/sec
+I1212 11:42:32.716939 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2427 rays/sec
+I1212 11:49:35.117054 139818628030464 train.py:473] gt image#=3 {'psnr': 15.326299667358398, 'ssim': 0.2010919749736786}
+I1212 11:49:35.146003 139818628030464 train.py:473] teacher image#=3 {'psnr': 16.570959091186523, 'ssim': 0.2661765515804291}
+I1212 11:49:35.216526 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 11:50:17.652354 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2396 rays/sec
+I1212 11:50:59.555982 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2426 rays/sec
+I1212 11:51:41.600352 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2418 rays/sec
+I1212 11:52:25.217626 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2331 rays/sec
+I1212 11:53:07.177662 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2423 rays/sec
+I1212 11:53:49.083514 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2426 rays/sec
+I1212 11:54:30.980927 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2427 rays/sec
+I1212 11:55:14.485935 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2337 rays/sec
+I1212 11:55:55.837972 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2459 rays/sec
+I1212 11:56:37.354701 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2449 rays/sec
+I1212 12:03:43.256963 139818628030464 train.py:473] gt image#=4 {'psnr': 14.527518272399902, 'ssim': 0.23703090846538544}
+I1212 12:03:43.285737 139818628030464 train.py:473] teacher image#=4 {'psnr': 15.316428184509277, 'ssim': 0.3231222927570343}
+I1212 12:03:43.356673 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 12:04:25.639060 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2404 rays/sec
+I1212 12:05:07.573650 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2424 rays/sec
+I1212 12:05:51.022203 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2340 rays/sec
+I1212 12:06:33.179135 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2412 rays/sec
+I1212 12:07:15.149532 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2422 rays/sec
+I1212 12:07:56.859577 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2437 rays/sec
+I1212 12:08:39.939319 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2360 rays/sec
+I1212 12:09:22.381036 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2395 rays/sec
+I1212 12:10:03.880023 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2450 rays/sec
+I1212 12:10:45.544291 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2440 rays/sec
+I1212 12:17:49.497900 139818628030464 train.py:473] gt image#=5 {'psnr': 15.392992973327637, 'ssim': 0.2713411748409271}
+I1212 12:17:49.526894 139818628030464 train.py:473] teacher image#=5 {'psnr': 15.978643417358398, 'ssim': 0.3469870686531067}
+I1212 12:17:49.598680 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 12:18:31.776244 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2410 rays/sec
+I1212 12:19:14.624675 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2373 rays/sec
+I1212 12:19:57.761632 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2357 rays/sec
+I1212 12:20:39.631611 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2428 rays/sec
+I1212 12:21:21.251995 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2443 rays/sec
+I1212 12:22:02.844779 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2444 rays/sec
+I1212 12:22:45.895191 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2362 rays/sec
+I1212 12:23:27.610987 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2437 rays/sec
+I1212 12:24:09.364748 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2435 rays/sec
+I1212 12:24:50.907121 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2447 rays/sec
+I1212 12:31:53.737047 139818628030464 train.py:473] gt image#=6 {'psnr': 16.65496253967285, 'ssim': 0.23535968363285065}
+I1212 12:31:53.765540 139818628030464 train.py:473] teacher image#=6 {'psnr': 17.13828468322754, 'ssim': 0.288208931684494}
+I1212 12:31:53.834107 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 12:32:35.814885 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2422 rays/sec
+I1212 12:33:17.641243 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2431 rays/sec
+I1212 12:34:01.137034 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2337 rays/sec
+I1212 12:34:42.808996 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2440 rays/sec
+I1212 12:35:24.543546 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2436 rays/sec
+I1212 12:36:06.386116 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2430 rays/sec
+I1212 12:36:50.134300 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2324 rays/sec
+I1212 12:37:31.564172 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2454 rays/sec
+I1212 12:38:12.944744 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2457 rays/sec
+I1212 12:38:54.425170 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2451 rays/sec
+I1212 12:45:54.552311 139818628030464 train.py:473] gt image#=7 {'psnr': 16.854780197143555, 'ssim': 0.24901935458183289}
+I1212 12:45:54.577645 139818628030464 train.py:473] teacher image#=7 {'psnr': 17.630456924438477, 'ssim': 0.30552759766578674}
+I1212 12:45:54.650534 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 12:46:36.844660 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2409 rays/sec
+I1212 12:47:18.959759 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2414 rays/sec
+I1212 12:48:00.800337 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2430 rays/sec
+I1212 12:48:44.445659 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2329 rays/sec
+I1212 12:49:26.346648 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2426 rays/sec
+I1212 12:50:07.736606 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2456 rays/sec
+I1212 12:50:49.441920 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2438 rays/sec
+I1212 12:51:32.714712 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2349 rays/sec
+I1212 12:52:13.972939 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2464 rays/sec
+I1212 12:52:55.431449 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2452 rays/sec
+I1212 13:00:00.790084 139818628030464 train.py:473] gt image#=8 {'psnr': 17.945510864257812, 'ssim': 0.3114438056945801}
+I1212 13:00:00.819059 139818628030464 train.py:473] teacher image#=8 {'psnr': 18.22563362121582, 'ssim': 0.3751504719257355}
+I1212 13:00:00.889102 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 13:00:43.184181 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2404 rays/sec
+I1212 13:01:25.293750 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2414 rays/sec
+I1212 13:02:06.942549 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2441 rays/sec
+I1212 13:02:50.176725 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2351 rays/sec
+I1212 13:03:31.876863 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2438 rays/sec
+I1212 13:04:13.513308 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2442 rays/sec
+I1212 13:04:55.208678 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2438 rays/sec
+I1212 13:05:38.430513 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2352 rays/sec
+I1212 13:06:20.132883 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2438 rays/sec
+I1212 13:07:01.961820 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2430 rays/sec
+I1212 13:14:00.552790 139818628030464 train.py:473] gt image#=9 {'psnr': 17.524486541748047, 'ssim': 0.26982977986335754}
+I1212 13:14:00.580697 139818628030464 train.py:473] teacher image#=9 {'psnr': 17.855459213256836, 'ssim': 0.3135526776313782}
+I1212 13:14:00.656210 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 13:14:42.571620 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2425 rays/sec
+I1212 13:15:24.157244 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2445 rays/sec
+I1212 13:16:05.714947 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2446 rays/sec
+I1212 13:16:49.340839 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2330 rays/sec
+I1212 13:17:31.286597 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2424 rays/sec
+I1212 13:18:12.848205 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2446 rays/sec
+I1212 13:18:54.654592 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2432 rays/sec
+I1212 13:19:38.534201 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2317 rays/sec
+I1212 13:20:19.911908 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2457 rays/sec
+I1212 13:21:01.061853 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2471 rays/sec
+I1212 13:28:03.612893 139818628030464 train.py:473] gt image#=10 {'psnr': 17.166976928710938, 'ssim': 0.2805508077144623}
+I1212 13:28:03.641397 139818628030464 train.py:473] teacher image#=10 {'psnr': 17.421958923339844, 'ssim': 0.33467549085617065}
+I1212 13:28:03.710963 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 13:28:47.315865 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2331 rays/sec
+I1212 13:29:29.885151 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2388 rays/sec
+I1212 13:30:11.838366 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2423 rays/sec
+I1212 13:30:53.903082 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2417 rays/sec
+I1212 13:31:37.458041 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2334 rays/sec
+I1212 13:32:19.015064 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2446 rays/sec
+I1212 13:33:00.417783 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2455 rays/sec
+I1212 13:33:42.015938 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2444 rays/sec
+I1212 13:34:25.265366 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2351 rays/sec
+I1212 13:35:06.570778 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2461 rays/sec
+I1212 13:42:07.908647 139818628030464 train.py:473] gt image#=11 {'psnr': 16.532546997070312, 'ssim': 0.25752750039100647}
+I1212 13:42:07.933872 139818628030464 train.py:473] teacher image#=11 {'psnr': 16.583288192749023, 'ssim': 0.3114483058452606}
+I1212 13:42:08.005835 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 13:42:51.910967 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2316 rays/sec
+I1212 13:43:33.889375 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2422 rays/sec
+I1212 13:44:15.402620 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2449 rays/sec
+I1212 13:44:56.918920 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2449 rays/sec
+I1212 13:45:39.933070 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2364 rays/sec
+I1212 13:46:21.364272 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2454 rays/sec
+I1212 13:47:02.855901 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2450 rays/sec
+I1212 13:47:44.364447 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2449 rays/sec
+I1212 13:48:25.931112 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2446 rays/sec
+I1212 13:49:09.255935 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2347 rays/sec
+I1212 13:56:09.870297 139818628030464 train.py:473] gt image#=12 {'psnr': 17.20956039428711, 'ssim': 0.2765759527683258}
+I1212 13:56:09.897408 139818628030464 train.py:473] teacher image#=12 {'psnr': 17.459827423095703, 'ssim': 0.3205544352531433}
+I1212 13:56:09.967884 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 13:56:52.132885 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2411 rays/sec
+I1212 13:57:36.221409 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2306 rays/sec
+I1212 13:58:17.974297 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2435 rays/sec
+I1212 13:58:59.478243 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2450 rays/sec
+I1212 13:59:41.093979 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2443 rays/sec
+I1212 14:00:24.535291 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2340 rays/sec
+I1212 14:01:06.207570 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2440 rays/sec
+I1212 14:01:47.597228 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2456 rays/sec
+I1212 14:02:29.015390 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2455 rays/sec
+I1212 14:03:12.129741 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2358 rays/sec
+I1212 14:10:05.479808 139818628030464 train.py:473] gt image#=13 {'psnr': 17.41794204711914, 'ssim': 0.2842010259628296}
+I1212 14:10:05.508438 139818628030464 train.py:473] teacher image#=13 {'psnr': 17.70229721069336, 'ssim': 0.31894782185554504}
+I1212 14:10:05.578211 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 14:10:47.665349 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2416 rays/sec
+I1212 14:11:29.648434 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2422 rays/sec
+I1212 14:12:11.448006 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2432 rays/sec
+I1212 14:12:54.951036 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2337 rays/sec
+I1212 14:13:36.414687 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2452 rays/sec
+I1212 14:14:17.855403 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2453 rays/sec
+I1212 14:14:59.169069 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2461 rays/sec
+I1212 14:15:42.620953 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2340 rays/sec
+I1212 14:16:24.019226 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2456 rays/sec
+I1212 14:17:05.187291 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2469 rays/sec
+I1212 14:24:05.457277 139818628030464 train.py:473] gt image#=14 {'psnr': 17.78437614440918, 'ssim': 0.32898959517478943}
+I1212 14:24:05.485234 139818628030464 train.py:473] teacher image#=14 {'psnr': 18.1970272064209, 'ssim': 0.3900630474090576}
+I1212 14:24:05.556949 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 14:24:47.882967 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2402 rays/sec
+I1212 14:25:29.856498 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2422 rays/sec
+I1212 14:26:11.702042 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2430 rays/sec
+I1212 14:26:54.694738 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2365 rays/sec
+I1212 14:27:36.330876 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2442 rays/sec
+I1212 14:28:18.043343 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2437 rays/sec
+I1212 14:28:59.623836 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2445 rays/sec
+I1212 14:29:42.505215 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2371 rays/sec
+I1212 14:30:23.972059 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2452 rays/sec
+I1212 14:31:05.724143 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2435 rays/sec
+I1212 14:38:06.254858 139818628030464 train.py:473] gt image#=15 {'psnr': 17.28134536743164, 'ssim': 0.2943730354309082}
+I1212 14:38:06.283269 139818628030464 train.py:473] teacher image#=15 {'psnr': 17.540103912353516, 'ssim': 0.34294670820236206}
+I1212 14:38:06.355904 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 14:38:48.619071 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2406 rays/sec
+I1212 14:39:30.600550 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2422 rays/sec
+I1212 14:40:12.516155 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2425 rays/sec
+I1212 14:40:55.727731 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2353 rays/sec
+I1212 14:41:37.428294 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2438 rays/sec
+I1212 14:42:19.253182 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2431 rays/sec
+I1212 14:43:02.186108 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2368 rays/sec
+I1212 14:43:43.738858 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2447 rays/sec
+I1212 14:44:25.179126 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2453 rays/sec
+I1212 14:45:06.537067 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2458 rays/sec
+I1212 14:52:06.985012 139818628030464 train.py:473] gt image#=16 {'psnr': 17.069360733032227, 'ssim': 0.3472600281238556}
+I1212 14:52:07.011838 139818628030464 train.py:473] teacher image#=16 {'psnr': 17.288997650146484, 'ssim': 0.3934997618198395}
+I1212 14:52:07.082313 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 14:52:49.394442 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2403 rays/sec
+I1212 14:53:31.532243 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2413 rays/sec
+I1212 14:54:14.650166 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2358 rays/sec
+I1212 14:54:56.691307 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2418 rays/sec
+I1212 14:55:38.445402 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2435 rays/sec
+I1212 14:56:21.698920 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2350 rays/sec
+I1212 14:57:03.704248 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2420 rays/sec
+I1212 14:57:45.690703 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2421 rays/sec
+I1212 14:58:27.328644 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2442 rays/sec
+I1212 14:59:10.066454 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2379 rays/sec
+I1212 15:06:11.815476 139818628030464 train.py:473] gt image#=17 {'psnr': 16.840065002441406, 'ssim': 0.25042155385017395}
+I1212 15:06:11.844312 139818628030464 train.py:473] teacher image#=17 {'psnr': 17.364912033081055, 'ssim': 0.3003593683242798}
+I1212 15:06:11.917582 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 15:06:55.304305 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2343 rays/sec
+I1212 15:07:37.514983 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2408 rays/sec
+I1212 15:08:19.212841 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2438 rays/sec
+I1212 15:09:01.411951 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2409 rays/sec
+I1212 15:09:43.181784 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2434 rays/sec
+I1212 15:10:24.943058 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2434 rays/sec
+I1212 15:11:06.682713 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2436 rays/sec
+I1212 15:11:49.051681 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2400 rays/sec
+I1212 15:12:30.852371 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2432 rays/sec
+I1212 15:13:12.572005 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2437 rays/sec
+I1212 15:20:11.386902 139818628030464 train.py:473] gt image#=18 {'psnr': 17.477142333984375, 'ssim': 0.33228054642677307}
+I1212 15:20:11.415851 139818628030464 train.py:473] teacher image#=18 {'psnr': 17.656505584716797, 'ssim': 0.3549124300479889}
+I1212 15:20:11.489521 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 15:20:53.637906 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2412 rays/sec
+I1212 15:21:35.991064 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2400 rays/sec
+I1212 15:22:18.867779 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2371 rays/sec
+I1212 15:23:00.864286 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2421 rays/sec
+I1212 15:23:42.780853 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2425 rays/sec
+I1212 15:24:25.547134 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2377 rays/sec
+I1212 15:25:07.472138 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2425 rays/sec
+I1212 15:25:49.066160 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2444 rays/sec
+I1212 15:26:30.520046 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2452 rays/sec
+I1212 15:27:12.959076 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2396 rays/sec
+I1212 15:34:13.690881 139818628030464 train.py:473] gt image#=19 {'psnr': 18.955163955688477, 'ssim': 0.4073587954044342}
+I1212 15:34:13.719182 139818628030464 train.py:473] teacher image#=19 {'psnr': 19.278141021728516, 'ssim': 0.436959445476532}
+I1212 15:34:13.790543 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 15:34:57.042925 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2350 rays/sec
+I1212 15:35:39.372532 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2402 rays/sec
+I1212 15:36:21.450574 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2416 rays/sec
+I1212 15:37:04.512439 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2361 rays/sec
+I1212 15:37:46.389060 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2428 rays/sec
+I1212 15:38:28.158531 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2434 rays/sec
+I1212 15:39:09.792333 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2442 rays/sec
+I1212 15:39:51.991460 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2409 rays/sec
+I1212 15:40:33.592526 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2444 rays/sec
+I1212 15:41:15.198008 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2444 rays/sec
+I1212 15:48:18.335626 139818628030464 train.py:473] gt image#=20 {'psnr': 17.238910675048828, 'ssim': 0.29235807061195374}
+I1212 15:48:18.363888 139818628030464 train.py:473] teacher image#=20 {'psnr': 17.35637855529785, 'ssim': 0.32402166724205017}
+I1212 15:48:18.438406 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 15:49:01.009305 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2388 rays/sec
+I1212 15:49:43.810876 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2375 rays/sec
+I1212 15:50:25.785470 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2422 rays/sec
+I1212 15:51:07.781530 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2421 rays/sec
+I1212 15:51:50.254099 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2394 rays/sec
+I1212 15:52:32.076392 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2431 rays/sec
+I1212 15:53:13.815848 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2436 rays/sec
+I1212 15:53:55.823176 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2420 rays/sec
+I1212 15:54:38.297363 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2394 rays/sec
+I1212 15:55:19.963788 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2440 rays/sec
+I1212 16:02:29.394772 139818628030464 train.py:473] gt image#=21 {'psnr': 19.037290573120117, 'ssim': 0.36344724893569946}
+I1212 16:02:29.422982 139818628030464 train.py:473] teacher image#=21 {'psnr': 19.041461944580078, 'ssim': 0.42441263794898987}
+I1212 16:02:29.496223 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 16:03:13.244782 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2324 rays/sec
+I1212 16:03:57.287037 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2308 rays/sec
+I1212 16:04:40.085608 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2375 rays/sec
+I1212 16:05:23.106232 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2363 rays/sec
+I1212 16:06:06.858824 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2324 rays/sec
+I1212 16:06:49.981580 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2358 rays/sec
+I1212 16:07:32.931101 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2367 rays/sec
+I1212 16:08:16.085563 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2356 rays/sec
+I1212 16:08:58.993284 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2369 rays/sec
+I1212 16:09:41.442086 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2395 rays/sec
+I1212 16:16:49.859745 139818628030464 train.py:473] gt image#=22 {'psnr': 16.98874855041504, 'ssim': 0.3416379392147064}
+I1212 16:16:49.887693 139818628030464 train.py:473] teacher image#=22 {'psnr': 16.858469009399414, 'ssim': 0.34901678562164307}
+I1212 16:16:49.975394 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 16:17:33.204441 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2352 rays/sec
+I1212 16:18:15.680498 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2393 rays/sec
+I1212 16:18:57.811082 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2413 rays/sec
+I1212 16:19:39.540589 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2436 rays/sec
+I1212 16:20:22.178934 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2384 rays/sec
+I1212 16:21:03.707661 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2448 rays/sec
+I1212 16:21:46.193653 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2393 rays/sec
+I1212 16:22:28.818032 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2385 rays/sec
+I1212 16:23:10.631744 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2431 rays/sec
+I1212 16:23:52.300606 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2440 rays/sec
+I1212 16:30:55.462153 139818628030464 train.py:473] gt image#=23 {'psnr': 16.495323181152344, 'ssim': 0.25547221302986145}
+I1212 16:30:55.487030 139818628030464 train.py:473] teacher image#=23 {'psnr': 17.026304244995117, 'ssim': 0.34374764561653137}
+I1212 16:30:55.577783 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 16:31:37.872490 139818628030464 models.py:1053] Rendering chunk 3178/31776, 2404 rays/sec
+I1212 16:32:21.365493 139818628030464 models.py:1053] Rendering chunk 6355/31776, 2337 rays/sec
+I1212 16:33:03.565440 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2409 rays/sec
+I1212 16:33:45.504828 139818628030464 models.py:1053] Rendering chunk 12709/31776, 2424 rays/sec
+I1212 16:34:27.331110 139818628030464 models.py:1053] Rendering chunk 15886/31776, 2431 rays/sec
+I1212 16:35:09.840505 139818628030464 models.py:1053] Rendering chunk 19063/31776, 2392 rays/sec
+I1212 16:35:51.699259 139818628030464 models.py:1053] Rendering chunk 22240/31776, 2429 rays/sec
+I1212 16:36:33.452663 139818628030464 models.py:1053] Rendering chunk 25417/31776, 2435 rays/sec
+I1212 16:37:16.144296 139818628030464 models.py:1053] Rendering chunk 28594/31776, 2381 rays/sec
+I1212 16:37:57.709774 139818628030464 models.py:1053] Rendering chunk 31771/31776, 2446 rays/sec
+I1212 16:44:52.193489 139818628030464 train.py:473] gt image#=24 {'psnr': 15.260991096496582, 'ssim': 0.31020528078079224}
+I1212 16:44:52.220648 139818628030464 train.py:473] teacher image#=24 {'psnr': 15.404889106750488, 'ssim': 0.34482672810554504}
+I1212 16:44:52.221414 139818628030464 train.py:485] average over all test images: {'teacher.psnr.avg=17.137524185180663', 'teacher.ssim.avg=0.3378529584407806', 'gt.ssim.avg=0.282433009147644', 'gt.psnr.avg=16.703810997009278'}
+I1212 16:44:52.438307 139818628030464 train.py:508] Rendering video...
+I1212 16:44:53.720445 139818628030464 train.py:540] Rendering render_path frame 0 of 50...
+I1212 16:44:53.722058 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 16:45:23.286304 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3439 rays/sec
+I1212 16:45:52.821997 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3442 rays/sec
+I1212 16:46:22.370526 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3441 rays/sec
+I1212 16:46:51.778757 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3457 rays/sec
+I1212 16:47:21.253963 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3449 rays/sec
+I1212 16:47:50.677501 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3455 rays/sec
+I1212 16:48:20.068417 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3459 rays/sec
+I1212 16:48:49.415200 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3464 rays/sec
+I1212 16:49:18.674959 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3475 rays/sec
+I1212 16:49:47.192328 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3565 rays/sec
+I1212 16:54:37.483684 139818628030464 train.py:540] Rendering render_path frame 2 of 50...
+I1212 16:54:37.485219 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 16:55:07.244640 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3416 rays/sec
+I1212 16:55:36.673947 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3455 rays/sec
+I1212 16:56:06.024137 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3464 rays/sec
+I1212 16:56:35.523878 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3446 rays/sec
+I1212 16:57:04.807095 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3472 rays/sec
+I1212 16:57:34.097594 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3471 rays/sec
+I1212 16:58:02.625293 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3564 rays/sec
+I1212 16:58:32.020758 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3459 rays/sec
+I1212 16:59:01.288829 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3474 rays/sec
+I1212 16:59:30.526290 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3477 rays/sec
+I1212 17:04:21.499887 139818628030464 train.py:540] Rendering render_path frame 4 of 50...
+I1212 17:04:21.501818 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:04:51.054690 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3440 rays/sec
+I1212 17:05:20.630282 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3437 rays/sec
+I1212 17:05:50.088205 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3451 rays/sec
+I1212 17:06:19.530387 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3453 rays/sec
+I1212 17:06:48.577783 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3500 rays/sec
+I1212 17:07:17.957580 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3460 rays/sec
+I1212 17:07:47.146095 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3483 rays/sec
+I1212 17:08:16.391487 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3476 rays/sec
+I1212 17:08:45.722292 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3466 rays/sec
+I1212 17:09:14.731605 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3505 rays/sec
+I1212 17:14:07.995877 139818628030464 train.py:540] Rendering render_path frame 6 of 50...
+I1212 17:14:07.997107 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:14:37.671500 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3426 rays/sec
+I1212 17:15:07.194533 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3444 rays/sec
+I1212 17:15:35.841921 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3549 rays/sec
+I1212 17:16:05.143743 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3470 rays/sec
+I1212 17:16:34.511833 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3462 rays/sec
+I1212 17:17:03.866567 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3463 rays/sec
+I1212 17:17:33.175157 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3469 rays/sec
+I1212 17:18:02.531175 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3463 rays/sec
+I1212 17:18:31.870945 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3465 rays/sec
+I1212 17:19:01.906317 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3385 rays/sec
+I1212 17:23:51.827891 139818628030464 train.py:540] Rendering render_path frame 8 of 50...
+I1212 17:23:51.828856 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:24:20.855102 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3503 rays/sec
+I1212 17:24:50.503909 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3429 rays/sec
+I1212 17:25:20.011500 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3445 rays/sec
+I1212 17:25:49.855543 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3407 rays/sec
+I1212 17:26:19.254826 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3458 rays/sec
+I1212 17:26:48.531885 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3472 rays/sec
+I1212 17:27:17.696904 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3486 rays/sec
+I1212 17:27:47.028316 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3466 rays/sec
+I1212 17:28:16.282243 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3475 rays/sec
+I1212 17:28:44.751097 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3571 rays/sec
+I1212 17:33:34.062871 139818628030464 train.py:540] Rendering render_path frame 10 of 50...
+I1212 17:33:34.063894 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:34:03.610997 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3441 rays/sec
+I1212 17:34:33.286512 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3426 rays/sec
+I1212 17:35:02.803692 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3444 rays/sec
+I1212 17:35:32.267647 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3450 rays/sec
+I1212 17:36:01.751169 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3448 rays/sec
+I1212 17:36:31.184785 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3454 rays/sec
+I1212 17:36:59.784586 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3555 rays/sec
+I1212 17:37:29.082638 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3470 rays/sec
+I1212 17:37:58.234178 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3487 rays/sec
+I1212 17:38:27.484062 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3476 rays/sec
+I1212 17:43:18.944581 139818628030464 train.py:540] Rendering render_path frame 12 of 50...
+I1212 17:43:18.946152 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:43:48.452447 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3446 rays/sec
+I1212 17:44:17.979014 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3443 rays/sec
+I1212 17:44:47.318280 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3465 rays/sec
+I1212 17:45:15.734580 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3578 rays/sec
+I1212 17:45:45.000524 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3474 rays/sec
+I1212 17:46:14.439503 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3453 rays/sec
+I1212 17:46:43.780673 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3465 rays/sec
+I1212 17:47:12.961652 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3484 rays/sec
+I1212 17:47:42.227990 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3474 rays/sec
+I1212 17:48:11.441467 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3480 rays/sec
+I1212 17:53:01.031721 139818628030464 train.py:540] Rendering render_path frame 14 of 50...
+I1212 17:53:01.032632 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 17:53:29.978114 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3512 rays/sec
+I1212 17:53:59.594497 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3433 rays/sec
+I1212 17:54:29.068694 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3449 rays/sec
+I1212 17:54:58.568409 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3446 rays/sec
+I1212 17:55:28.083966 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3444 rays/sec
+I1212 17:55:57.351519 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3474 rays/sec
+I1212 17:56:26.650148 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3470 rays/sec
+I1212 17:56:55.765092 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3492 rays/sec
+I1212 17:57:24.951116 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3483 rays/sec
+I1212 17:57:53.195937 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3599 rays/sec
+I1212 18:02:46.397439 139818628030464 train.py:540] Rendering render_path frame 16 of 50...
+I1212 18:02:46.398332 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:03:15.967150 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3438 rays/sec
+I1212 18:03:45.617021 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3429 rays/sec
+I1212 18:04:15.141163 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3443 rays/sec
+I1212 18:04:44.585637 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3453 rays/sec
+I1212 18:05:13.885170 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3470 rays/sec
+I1212 18:05:43.220142 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3466 rays/sec
+I1212 18:06:12.557071 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3465 rays/sec
+I1212 18:06:41.146185 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3556 rays/sec
+I1212 18:07:10.516372 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3461 rays/sec
+I1212 18:07:39.760595 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3476 rays/sec
+I1212 18:12:30.348391 139818628030464 train.py:540] Rendering render_path frame 18 of 50...
+I1212 18:12:30.349569 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:13:00.125094 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3414 rays/sec
+I1212 18:13:29.803262 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3426 rays/sec
+I1212 18:13:59.220622 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3456 rays/sec
+I1212 18:14:28.612507 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3459 rays/sec
+I1212 18:14:56.957069 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3587 rays/sec
+I1212 18:15:26.259610 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3469 rays/sec
+I1212 18:15:55.544268 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3472 rays/sec
+I1212 18:16:25.024291 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3449 rays/sec
+I1212 18:16:54.952742 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3397 rays/sec
+I1212 18:17:24.228638 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3473 rays/sec
+I1212 18:22:16.112013 139818628030464 train.py:540] Rendering render_path frame 20 of 50...
+I1212 18:22:16.112867 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:22:45.761873 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3429 rays/sec
+I1212 18:23:15.168822 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3457 rays/sec
+I1212 18:23:44.606066 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3454 rays/sec
+I1212 18:24:14.088328 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3448 rays/sec
+I1212 18:24:43.331727 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3476 rays/sec
+I1212 18:25:13.003100 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3426 rays/sec
+I1212 18:25:42.097127 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3494 rays/sec
+I1212 18:26:11.496905 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3458 rays/sec
+I1212 18:26:40.764394 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3474 rays/sec
+I1212 18:27:10.210441 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3453 rays/sec
+I1212 18:32:00.955372 139818628030464 train.py:540] Rendering render_path frame 22 of 50...
+I1212 18:32:00.956310 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:32:30.572238 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3433 rays/sec
+I1212 18:33:00.130904 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3439 rays/sec
+I1212 18:33:29.655481 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3443 rays/sec
+I1212 18:33:58.853700 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3482 rays/sec
+I1212 18:34:28.386016 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3442 rays/sec
+I1212 18:34:57.747227 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3463 rays/sec
+I1212 18:35:27.108632 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3463 rays/sec
+I1212 18:35:55.596975 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3569 rays/sec
+I1212 18:36:24.874876 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3472 rays/sec
+I1212 18:36:54.224432 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3464 rays/sec
+I1212 18:41:46.543009 139818628030464 train.py:540] Rendering render_path frame 24 of 50...
+I1212 18:41:46.543965 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:42:16.292279 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3417 rays/sec
+I1212 18:42:46.015521 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3420 rays/sec
+I1212 18:43:15.532234 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3444 rays/sec
+I1212 18:43:44.808304 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3473 rays/sec
+I1212 18:44:13.187547 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3582 rays/sec
+I1212 18:44:42.543067 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3463 rays/sec
+I1212 18:45:11.753403 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3480 rays/sec
+I1212 18:45:40.916815 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3486 rays/sec
+I1212 18:46:10.507039 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3436 rays/sec
+I1212 18:46:39.654922 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3488 rays/sec
+I1212 18:51:31.212353 139818628030464 train.py:540] Rendering render_path frame 26 of 50...
+I1212 18:51:31.213602 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 18:52:00.768570 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3440 rays/sec
+I1212 18:52:29.364567 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3555 rays/sec
+I1212 18:52:58.831419 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3450 rays/sec
+I1212 18:53:28.292576 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3451 rays/sec
+I1212 18:53:57.688340 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3458 rays/sec
+I1212 18:54:27.153978 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3450 rays/sec
+I1212 18:54:56.605816 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3452 rays/sec
+I1212 18:55:26.082021 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3449 rays/sec
+I1212 18:55:55.283266 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3482 rays/sec
+I1212 18:56:24.392353 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3493 rays/sec
+I1212 19:01:13.893957 139818628030464 train.py:540] Rendering render_path frame 28 of 50...
+I1212 19:01:13.895235 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:01:43.366445 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3450 rays/sec
+I1212 19:02:12.894343 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3443 rays/sec
+I1212 19:02:42.248748 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3463 rays/sec
+I1212 19:03:11.326983 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3496 rays/sec
+I1212 19:03:40.893159 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3439 rays/sec
+I1212 19:04:10.443009 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3440 rays/sec
+I1212 19:04:39.814586 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3461 rays/sec
+I1212 19:05:09.007877 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3482 rays/sec
+I1212 19:05:37.423876 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3578 rays/sec
+I1212 19:06:06.695566 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3473 rays/sec
+I1212 19:10:58.447505 139818628030464 train.py:540] Rendering render_path frame 30 of 50...
+I1212 19:10:58.448441 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:11:28.283277 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3408 rays/sec
+I1212 19:11:57.793341 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3445 rays/sec
+I1212 19:12:27.362887 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3438 rays/sec
+I1212 19:12:56.944755 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3437 rays/sec
+I1212 19:13:26.239510 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3470 rays/sec
+I1212 19:13:54.538747 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3592 rays/sec
+I1212 19:14:23.767189 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3478 rays/sec
+I1212 19:14:52.963940 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3482 rays/sec
+I1212 19:15:22.813028 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3406 rays/sec
+I1212 19:15:52.103942 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3471 rays/sec
+I1212 19:20:41.775907 139818628030464 train.py:540] Rendering render_path frame 32 of 50...
+I1212 19:20:41.776785 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:21:11.632966 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3405 rays/sec
+I1212 19:21:40.477584 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3525 rays/sec
+I1212 19:22:10.069856 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3436 rays/sec
+I1212 19:22:39.522229 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3452 rays/sec
+I1212 19:23:09.538440 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3387 rays/sec
+I1212 19:23:38.987219 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3452 rays/sec
+I1212 19:24:08.248009 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3474 rays/sec
+I1212 19:24:37.640836 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3459 rays/sec
+I1212 19:25:07.099508 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3451 rays/sec
+I1212 19:25:36.291216 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3483 rays/sec
+I1212 19:30:26.364776 139818628030464 train.py:540] Rendering render_path frame 34 of 50...
+I1212 19:30:26.365970 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:30:56.056154 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3424 rays/sec
+I1212 19:31:25.817796 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3416 rays/sec
+I1212 19:31:54.988763 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3485 rays/sec
+I1212 19:32:24.850373 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3405 rays/sec
+I1212 19:32:53.992844 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3489 rays/sec
+I1212 19:33:23.449503 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3451 rays/sec
+I1212 19:33:52.639244 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3483 rays/sec
+I1212 19:34:20.846388 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3604 rays/sec
+I1212 19:34:50.120311 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3473 rays/sec
+I1212 19:35:19.406708 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3471 rays/sec
+I1212 19:40:10.638546 139818628030464 train.py:540] Rendering render_path frame 36 of 50...
+I1212 19:40:10.639478 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:40:40.317819 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3426 rays/sec
+I1212 19:41:09.975836 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3428 rays/sec
+I1212 19:41:39.543310 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3438 rays/sec
+I1212 19:42:07.988777 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3574 rays/sec
+I1212 19:42:37.493354 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3446 rays/sec
+I1212 19:43:07.008292 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3445 rays/sec
+I1212 19:43:36.262073 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3475 rays/sec
+I1212 19:44:05.590545 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3466 rays/sec
+I1212 19:44:34.895910 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3469 rays/sec
+I1212 19:45:03.996010 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3494 rays/sec
+I1212 19:49:53.404903 139818628030464 train.py:540] Rendering render_path frame 38 of 50...
+I1212 19:49:53.405988 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 19:50:23.062073 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3428 rays/sec
+I1212 19:50:52.614883 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3440 rays/sec
+I1212 19:51:22.174600 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3439 rays/sec
+I1212 19:51:51.633373 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3451 rays/sec
+I1212 19:52:21.100407 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3450 rays/sec
+I1212 19:52:50.581984 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3448 rays/sec
+I1212 19:53:19.972717 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3459 rays/sec
+I1212 19:53:47.988320 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3629 rays/sec
+I1212 19:54:17.287752 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3470 rays/sec
+I1212 19:54:46.644999 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3463 rays/sec
+I1212 19:59:36.110041 139818628030464 train.py:540] Rendering render_path frame 40 of 50...
+I1212 19:59:36.110884 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 20:00:05.854650 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3418 rays/sec
+I1212 20:00:35.655668 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3411 rays/sec
+I1212 20:01:05.292157 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3430 rays/sec
+I1212 20:01:33.534998 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3600 rays/sec
+I1212 20:02:02.814409 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3472 rays/sec
+I1212 20:02:32.198683 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3460 rays/sec
+I1212 20:03:01.484069 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3472 rays/sec
+I1212 20:03:30.639773 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3487 rays/sec
+I1212 20:03:59.905258 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3474 rays/sec
+I1212 20:04:29.142766 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3477 rays/sec
+I1212 20:09:18.026084 139818628030464 train.py:540] Rendering render_path frame 42 of 50...
+I1212 20:09:18.027123 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 20:09:47.581051 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3440 rays/sec
+I1212 20:10:17.279617 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3423 rays/sec
+I1212 20:10:52.698055 139818628030464 models.py:1053] Rendering chunk 9532/31776, 2870 rays/sec
+I1212 20:11:22.608630 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3399 rays/sec
+I1212 20:11:52.426127 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3410 rays/sec
+I1212 20:12:22.201462 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3414 rays/sec
+I1212 20:12:52.046272 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3406 rays/sec
+I1212 20:13:21.805357 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3416 rays/sec
+I1212 20:13:51.293619 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3448 rays/sec
+I1212 20:14:20.436631 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3488 rays/sec
+I1212 20:19:18.377027 139818628030464 train.py:540] Rendering render_path frame 44 of 50...
+I1212 20:19:18.378678 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 20:19:48.352611 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3392 rays/sec
+I1212 20:20:18.177473 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3409 rays/sec
+I1212 20:20:48.291484 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3376 rays/sec
+I1212 20:21:18.212714 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3398 rays/sec
+I1212 20:21:48.068783 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3405 rays/sec
+I1212 20:22:18.493047 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3342 rays/sec
+I1212 20:22:48.182685 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3424 rays/sec
+I1212 20:23:16.750344 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3559 rays/sec
+I1212 20:23:46.477133 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3420 rays/sec
+I1212 20:24:16.159374 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3425 rays/sec
+I1212 20:29:09.945559 139818628030464 train.py:540] Rendering render_path frame 46 of 50...
+I1212 20:29:09.946768 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 20:29:39.499425 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3440 rays/sec
+I1212 20:30:09.059210 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3439 rays/sec
+I1212 20:30:38.414763 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3463 rays/sec
+I1212 20:31:07.736294 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3467 rays/sec
+I1212 20:31:35.750635 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3629 rays/sec
+I1212 20:32:04.985805 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3477 rays/sec
+I1212 20:32:34.112117 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3490 rays/sec
+I1212 20:33:03.278514 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3486 rays/sec
+I1212 20:33:32.281196 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3505 rays/sec
+I1212 20:34:01.412051 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3490 rays/sec
+I1212 20:38:51.089655 139818628030464 train.py:540] Rendering render_path frame 48 of 50...
+I1212 20:38:51.090994 139818628030464 models.py:1046] Rendering chunk 1/31776
+I1212 20:39:20.617720 139818628030464 models.py:1053] Rendering chunk 3178/31776, 3443 rays/sec
+I1212 20:39:50.030957 139818628030464 models.py:1053] Rendering chunk 6355/31776, 3456 rays/sec
+I1212 20:40:19.244602 139818628030464 models.py:1053] Rendering chunk 9532/31776, 3480 rays/sec
+I1212 20:40:48.412010 139818628030464 models.py:1053] Rendering chunk 12709/31776, 3486 rays/sec
+I1212 20:41:18.032080 139818628030464 models.py:1053] Rendering chunk 15886/31776, 3432 rays/sec
+I1212 20:41:47.443024 139818628030464 models.py:1053] Rendering chunk 19063/31776, 3457 rays/sec
+I1212 20:42:16.624935 139818628030464 models.py:1053] Rendering chunk 22240/31776, 3484 rays/sec
+I1212 20:42:44.596462 139818628030464 models.py:1053] Rendering chunk 25417/31776, 3635 rays/sec
+I1212 20:43:13.772274 139818628030464 models.py:1053] Rendering chunk 28594/31776, 3485 rays/sec
+I1212 20:43:42.606092 139818628030464 models.py:1053] Rendering chunk 31771/31776, 3526 rays/sec
+I1212 20:48:34.489972 139818628030464 train.py:680] Baking submodel #0/1 (#0 of #1)
+I1212 20:48:35.134063 139818628030464 baking.py:1668] Computing alive_voxels...
+I1212 20:48:35.171401 139818628030464 baking.py:1217] Calculating alive_voxels...
+I1212 20:48:35.190124 139818628030464 baking.py:492] Rendering 169 images for alive_voxels computation.
+I1212 20:48:35.190246 139818628030464 baking.py:499] Processing view #0 (0 of 169)...
+I1212 21:10:24.133973 139818628030464 baking.py:499] Processing view #1 (1 of 169)...
+I1212 21:32:31.237456 139818628030464 baking.py:499] Processing view #2 (2 of 169)...
+I1212 21:56:10.368440 139818628030464 baking.py:499] Processing view #3 (3 of 169)...
+I1212 22:19:59.450735 139818628030464 baking.py:499] Processing view #4 (4 of 169)...
+I1212 22:40:40.721931 139818628030464 baking.py:499] Processing view #5 (5 of 169)...
+I1212 23:04:32.203495 139818628030464 baking.py:499] Processing view #6 (6 of 169)...
+I1212 23:25:11.985831 139818628030464 baking.py:499] Processing view #7 (7 of 169)...
+I1212 23:47:07.901955 139818628030464 baking.py:499] Processing view #8 (8 of 169)...
+I1213 00:07:29.535917 139818628030464 baking.py:499] Processing view #9 (9 of 169)...
+I1213 00:31:42.873063 139818628030464 baking.py:499] Processing view #10 (10 of 169)...
+I1213 00:55:46.311548 139818628030464 baking.py:499] Processing view #11 (11 of 169)...
+I1213 01:19:58.932694 139818628030464 baking.py:499] Processing view #12 (12 of 169)...
+I1213 01:40:59.025260 139818628030464 baking.py:499] Processing view #13 (13 of 169)...
+I1213 02:04:25.930755 139818628030464 baking.py:499] Processing view #14 (14 of 169)...
+I1213 02:28:23.095977 139818628030464 baking.py:499] Processing view #15 (15 of 169)...
+I1213 02:52:11.178903 139818628030464 baking.py:499] Processing view #16 (16 of 169)...
+I1213 03:16:06.977844 139818628030464 baking.py:499] Processing view #17 (17 of 169)...
+I1213 03:40:19.473624 139818628030464 baking.py:499] Processing view #18 (18 of 169)...
+I1213 04:04:22.802824 139818628030464 baking.py:499] Processing view #19 (19 of 169)...
+I1213 04:28:14.353082 139818628030464 baking.py:499] Processing view #20 (20 of 169)...
+I1213 04:51:51.277747 139818628030464 baking.py:499] Processing view #21 (21 of 169)...
+I1213 05:15:48.803962 139818628030464 baking.py:499] Processing view #22 (22 of 169)...
+I1213 05:39:32.549648 139818628030464 baking.py:499] Processing view #23 (23 of 169)...
+I1213 06:03:19.427531 139818628030464 baking.py:499] Processing view #24 (24 of 169)...
+I1213 06:27:09.680188 139818628030464 baking.py:499] Processing view #25 (25 of 169)...
+I1213 06:51:10.511031 139818628030464 baking.py:499] Processing view #26 (26 of 169)...
+I1213 07:15:01.676235 139818628030464 baking.py:499] Processing view #27 (27 of 169)...
+I1213 07:39:10.507418 139818628030464 baking.py:499] Processing view #28 (28 of 169)...
+I1213 08:03:20.843193 139818628030464 baking.py:499] Processing view #29 (29 of 169)...
+I1213 08:27:21.614068 139818628030464 baking.py:499] Processing view #30 (30 of 169)...
+I1213 08:51:03.346404 139818628030464 baking.py:499] Processing view #31 (31 of 169)...
+I1213 09:14:33.712023 139818628030464 baking.py:499] Processing view #32 (32 of 169)...
+I1213 09:38:27.843571 139818628030464 baking.py:499] Processing view #33 (33 of 169)...
+I1213 10:02:12.850087 139818628030464 baking.py:499] Processing view #34 (34 of 169)...
+I1213 10:22:55.271215 139818628030464 baking.py:499] Processing view #35 (35 of 169)...
+I1213 10:47:02.656432 139818628030464 baking.py:499] Processing view #36 (36 of 169)...
+I1213 11:11:24.004920 139818628030464 baking.py:499] Processing view #37 (37 of 169)...
+I1213 11:35:40.720299 139818628030464 baking.py:499] Processing view #38 (38 of 169)...
+I1213 11:59:34.733260 139818628030464 baking.py:499] Processing view #39 (39 of 169)...
+I1213 12:23:38.563523 139818628030464 baking.py:499] Processing view #40 (40 of 169)...
+I1213 12:47:59.655847 139818628030464 baking.py:499] Processing view #41 (41 of 169)...
+I1213 13:12:20.014489 139818628030464 baking.py:499] Processing view #42 (42 of 169)...
+I1213 13:36:29.235019 139818628030464 baking.py:499] Processing view #43 (43 of 169)...
+I1213 13:58:34.260243 139818628030464 baking.py:499] Processing view #44 (44 of 169)...
+I1213 14:21:24.256020 139818628030464 baking.py:499] Processing view #45 (45 of 169)...
+I1213 14:45:23.027845 139818628030464 baking.py:499] Processing view #46 (46 of 169)...
+I1213 15:09:10.722532 139818628030464 baking.py:499] Processing view #47 (47 of 169)...
+I1213 15:30:09.311171 139818628030464 baking.py:499] Processing view #48 (48 of 169)...
+I1213 15:53:13.566878 139818628030464 baking.py:499] Processing view #49 (49 of 169)...
+I1213 16:16:54.662566 139818628030464 baking.py:499] Processing view #50 (50 of 169)...
+I1213 16:40:50.314888 139818628030464 baking.py:499] Processing view #51 (51 of 169)...
+I1213 17:04:42.248803 139818628030464 baking.py:499] Processing view #52 (52 of 169)...
+I1213 17:28:30.975618 139818628030464 baking.py:499] Processing view #53 (53 of 169)...
+I1213 17:52:31.531613 139818628030464 baking.py:499] Processing view #54 (54 of 169)...
+I1213 18:16:23.860730 139818628030464 baking.py:499] Processing view #55 (55 of 169)...
+I1213 18:39:53.980458 139818628030464 baking.py:499] Processing view #56 (56 of 169)...
+I1213 19:03:32.951634 139818628030464 baking.py:499] Processing view #57 (57 of 169)...
+I1213 19:27:40.298911 139818628030464 baking.py:499] Processing view #58 (58 of 169)...
+I1213 19:51:41.311828 139818628030464 baking.py:499] Processing view #59 (59 of 169)...
+I1213 20:15:36.329670 139818628030464 baking.py:499] Processing view #60 (60 of 169)...
+I1213 20:39:34.764678 139818628030464 baking.py:499] Processing view #61 (61 of 169)...
+I1213 21:03:28.416219 139818628030464 baking.py:499] Processing view #62 (62 of 169)...
+I1213 21:27:11.015497 139818628030464 baking.py:499] Processing view #63 (63 of 169)...
+I1213 21:51:05.660791 139818628030464 baking.py:499] Processing view #64 (64 of 169)...
+I1213 22:14:57.683370 139818628030464 baking.py:499] Processing view #65 (65 of 169)...
+I1213 22:38:56.079474 139818628030464 baking.py:499] Processing view #66 (66 of 169)...
+I1213 23:02:18.912053 139818628030464 baking.py:499] Processing view #67 (67 of 169)...
+I1213 23:26:15.062439 139818628030464 baking.py:499] Processing view #68 (68 of 169)...
+I1213 23:49:59.342412 139818628030464 baking.py:499] Processing view #69 (69 of 169)...
+I1214 00:14:04.423088 139818628030464 baking.py:499] Processing view #70 (70 of 169)...
+I1214 00:38:12.402606 139818628030464 baking.py:499] Processing view #71 (71 of 169)...
+I1214 01:02:20.829043 139818628030464 baking.py:499] Processing view #72 (72 of 169)...
+I1214 01:26:20.123180 139818628030464 baking.py:499] Processing view #73 (73 of 169)...
+I1214 01:50:15.908820 139818628030464 baking.py:499] Processing view #74 (74 of 169)...
+I1214 02:11:52.142308 139818628030464 baking.py:499] Processing view #75 (75 of 169)...
+I1214 02:35:18.030175 139818628030464 baking.py:499] Processing view #76 (76 of 169)...
+I1214 02:59:33.540566 139818628030464 baking.py:499] Processing view #77 (77 of 169)...
+I1214 03:23:49.007569 139818628030464 baking.py:499] Processing view #78 (78 of 169)...
+I1214 03:48:10.997520 139818628030464 baking.py:499] Processing view #79 (79 of 169)...
+I1214 04:12:35.505291 139818628030464 baking.py:499] Processing view #80 (80 of 169)...
+I1214 04:36:55.795200 139818628030464 baking.py:499] Processing view #81 (81 of 169)...
+I1214 05:01:15.727910 139818628030464 baking.py:499] Processing view #82 (82 of 169)...
+I1214 05:25:36.407658 139818628030464 baking.py:499] Processing view #83 (83 of 169)...
+I1214 05:49:50.548572 139818628030464 baking.py:499] Processing view #84 (84 of 169)...
+I1214 06:14:20.602661 139818628030464 baking.py:499] Processing view #85 (85 of 169)...
+I1214 06:38:50.847943 139818628030464 baking.py:499] Processing view #86 (86 of 169)...
+I1214 07:03:24.204110 139818628030464 baking.py:499] Processing view #87 (87 of 169)...
+I1214 07:27:42.446423 139818628030464 baking.py:499] Processing view #88 (88 of 169)...
+I1214 07:52:09.821772 139818628030464 baking.py:499] Processing view #89 (89 of 169)...
+I1214 08:16:45.192213 139818628030464 baking.py:499] Processing view #90 (90 of 169)...
+I1214 08:41:06.033642 139818628030464 baking.py:499] Processing view #91 (91 of 169)...
+I1214 09:05:19.029929 139818628030464 baking.py:499] Processing view #92 (92 of 169)...
+I1214 09:29:36.937800 139818628030464 baking.py:499] Processing view #93 (93 of 169)...
+I1214 09:53:53.194932 139818628030464 baking.py:499] Processing view #94 (94 of 169)...
+I1214 10:18:16.416068 139818628030464 baking.py:499] Processing view #95 (95 of 169)...
+I1214 10:42:41.150702 139818628030464 baking.py:499] Processing view #96 (96 of 169)...
+I1214 11:03:35.805191 139818628030464 baking.py:499] Processing view #97 (97 of 169)...
+I1214 11:24:22.508171 139818628030464 baking.py:499] Processing view #98 (98 of 169)...
+I1214 11:48:53.105190 139818628030464 baking.py:499] Processing view #99 (99 of 169)...
+I1214 12:13:03.945949 139818628030464 baking.py:499] Processing view #100 (100 of 169)...
+I1214 12:37:25.297234 139818628030464 baking.py:499] Processing view #101 (101 of 169)...
+I1214 13:01:00.781642 139818628030464 baking.py:499] Processing view #102 (102 of 169)...
+I1214 13:22:42.570926 139818628030464 baking.py:499] Processing view #103 (103 of 169)...
+I1214 13:47:05.424043 139818628030464 baking.py:499] Processing view #104 (104 of 169)...
+I1214 14:11:31.559409 139818628030464 baking.py:499] Processing view #105 (105 of 169)...
+I1214 14:36:01.943978 139818628030464 baking.py:499] Processing view #106 (106 of 169)...
+I1214 15:00:31.722533 139818628030464 baking.py:499] Processing view #107 (107 of 169)...
+I1214 15:24:53.438441 139818628030464 baking.py:499] Processing view #108 (108 of 169)...
+I1214 15:48:59.474854 139818628030464 baking.py:499] Processing view #109 (109 of 169)...
+I1214 16:12:44.314359 139818628030464 baking.py:499] Processing view #110 (110 of 169)...
+I1214 16:36:47.593621 139818628030464 baking.py:499] Processing view #111 (111 of 169)...
+I1214 17:00:44.480788 139818628030464 baking.py:499] Processing view #112 (112 of 169)...
+I1214 17:24:49.977677 139818628030464 baking.py:499] Processing view #113 (113 of 169)...
+I1214 17:48:53.120513 139818628030464 baking.py:499] Processing view #114 (114 of 169)...
+I1214 18:09:21.790045 139818628030464 baking.py:499] Processing view #115 (115 of 169)...
+I1214 18:33:30.871689 139818628030464 baking.py:499] Processing view #116 (116 of 169)...
+I1214 18:57:49.030267 139818628030464 baking.py:499] Processing view #117 (117 of 169)...
+I1214 19:18:23.481385 139818628030464 baking.py:499] Processing view #118 (118 of 169)...
+I1214 19:39:10.167523 139818628030464 baking.py:499] Processing view #119 (119 of 169)...
+I1214 19:59:33.757119 139818628030464 baking.py:499] Processing view #120 (120 of 169)...
+I1214 20:23:58.537214 139818628030464 baking.py:499] Processing view #121 (121 of 169)...
+I1214 20:48:25.540702 139818628030464 baking.py:499] Processing view #122 (122 of 169)...
+I1214 21:12:57.165852 139818628030464 baking.py:499] Processing view #123 (123 of 169)...
+I1214 21:37:27.507046 139818628030464 baking.py:499] Processing view #124 (124 of 169)...
+I1214 22:02:08.658254 139818628030464 baking.py:499] Processing view #125 (125 of 169)...
+I1214 22:26:57.304164 139818628030464 baking.py:499] Processing view #126 (126 of 169)...
+I1214 22:51:31.571985 139818628030464 baking.py:499] Processing view #127 (127 of 169)...
+I1214 23:16:05.230404 139818628030464 baking.py:499] Processing view #128 (128 of 169)...
+I1214 23:40:26.473880 139818628030464 baking.py:499] Processing view #129 (129 of 169)...
+I1215 00:04:55.741806 139818628030464 baking.py:499] Processing view #130 (130 of 169)...
+I1215 00:29:16.647728 139818628030464 baking.py:499] Processing view #131 (131 of 169)...
+I1215 00:53:37.610177 139818628030464 baking.py:499] Processing view #132 (132 of 169)...
+I1215 01:18:02.857882 139818628030464 baking.py:499] Processing view #133 (133 of 169)...
+I1215 01:42:38.162394 139818628030464 baking.py:499] Processing view #134 (134 of 169)...
+I1215 02:07:16.354645 139818628030464 baking.py:499] Processing view #135 (135 of 169)...
+I1215 02:31:57.709799 139818628030464 baking.py:499] Processing view #136 (136 of 169)...
+I1215 02:56:35.663047 139818628030464 baking.py:499] Processing view #137 (137 of 169)...
+I1215 03:21:18.611531 139818628030464 baking.py:499] Processing view #138 (138 of 169)...
+I1215 03:45:47.074606 139818628030464 baking.py:499] Processing view #139 (139 of 169)...
+I1215 04:10:15.737753 139818628030464 baking.py:499] Processing view #140 (140 of 169)...
+I1215 04:34:41.360528 139818628030464 baking.py:499] Processing view #141 (141 of 169)...
+I1215 04:59:12.054688 139818628030464 baking.py:499] Processing view #142 (142 of 169)...
+I1215 05:23:38.914755 139818628030464 baking.py:499] Processing view #143 (143 of 169)...
+I1215 05:48:18.299021 139818628030464 baking.py:499] Processing view #144 (144 of 169)...
+I1215 06:13:00.267805 139818628030464 baking.py:499] Processing view #145 (145 of 169)...
+I1215 06:37:25.972074 139818628030464 baking.py:499] Processing view #146 (146 of 169)...
+I1215 07:01:53.651152 139818628030464 baking.py:499] Processing view #147 (147 of 169)...
+I1215 07:26:24.500658 139818628030464 baking.py:499] Processing view #148 (148 of 169)...
+I1215 07:51:01.025846 139818628030464 baking.py:499] Processing view #149 (149 of 169)...
+I1215 08:15:22.090296 139818628030464 baking.py:499] Processing view #150 (150 of 169)...
+I1215 08:39:52.982878 139818628030464 baking.py:499] Processing view #151 (151 of 169)...
+I1215 09:04:22.003404 139818628030464 baking.py:499] Processing view #152 (152 of 169)...
+I1215 09:28:57.963980 139818628030464 baking.py:499] Processing view #153 (153 of 169)...
+I1215 09:53:32.131956 139818628030464 baking.py:499] Processing view #154 (154 of 169)...
+I1215 10:18:11.388320 139818628030464 baking.py:499] Processing view #155 (155 of 169)...
+I1215 10:42:54.856750 139818628030464 baking.py:499] Processing view #156 (156 of 169)...
+I1215 11:07:24.200387 139818628030464 baking.py:499] Processing view #157 (157 of 169)...
+I1215 11:31:54.575992 139818628030464 baking.py:499] Processing view #158 (158 of 169)...
+I1215 11:56:29.118396 139818628030464 baking.py:499] Processing view #159 (159 of 169)...
+I1215 12:17:59.360305 139818628030464 baking.py:499] Processing view #160 (160 of 169)...
+I1215 12:41:09.786927 139818628030464 baking.py:499] Processing view #161 (161 of 169)...
+I1215 13:02:22.214209 139818628030464 baking.py:499] Processing view #162 (162 of 169)...
+I1215 13:24:32.983171 139818628030464 baking.py:499] Processing view #163 (163 of 169)...
+I1215 13:46:24.925608 139818628030464 baking.py:499] Processing view #164 (164 of 169)...
+I1215 14:09:12.052742 139818628030464 baking.py:499] Processing view #165 (165 of 169)...
+I1215 14:31:28.604755 139818628030464 baking.py:499] Processing view #166 (166 of 169)...
+I1215 14:53:20.594774 139818628030464 baking.py:499] Processing view #167 (167 of 169)...
+I1215 15:18:07.698905 139818628030464 baking.py:499] Processing view #168 (168 of 169)...
+I1215 15:39:10.436675 139818628030464 baking.py:1231] Finished calculating alive_voxels!
+I1215 15:39:10.436842 139818628030464 baking.py:1233] Saving alive_voxels to /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/alive_voxels.npy...
+I1215 15:39:10.655622 139818628030464 baking.py:1242] 4.08% voxels are occupied.
+I1215 15:39:10.655857 139818628030464 baking.py:1685] Applying median filter (if needed)...
+I1215 15:39:10.655906 139818628030464 baking.py:401] Applying median filter with filter_size=3, chunk_size=128
+I1215 15:39:13.211179 139818628030464 baking.py:1691] Downsampling occupancy grids...
+I1215 15:39:14.455088 139818628030464 baking.py:1699] Computing alive macroblocks...
+I1215 15:39:14.455260 139818628030464 baking.py:1276] Calculating alive macroblocks for data_block_size=8 with use_sparse_grid=True and use_triplanes=True
+I1215 15:39:15.135152 139818628030464 baking.py:1308] Sparse grid: 6048 out of 32768 (18.5%) macroblocks are occupied.
+I1215 15:39:15.135329 139818628030464 baking.py:1705] Computing sparse voxel feature grid...
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 152/152 [01:50<00:00,  1.37it/s]██▏                                                                                    | 23/152 [00:22<01:49,  1.17it/s]
+I1215 15:41:06.098562 139818628030464 baking.py:1719] Computing triplane feature maps...
+I1215 15:41:06.099003 139818628030464 baking.py:885] baking triplane plane_idx=0
+I1215 15:41:06.099151 139818628030464 baking.py:890] Dilating triplane feature map with max_filter_size=37
+I1215 15:41:06.154071 139818628030464 baking.py:898] Evaluating 188918 live texels for plane=0.
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:11<00:00,  1.15s/it]
+I1215 15:41:17.647426 139818628030464 baking.py:885] baking triplane plane_idx=1
+I1215 15:41:17.647583 139818628030464 baking.py:890] Dilating triplane feature map with max_filter_size=37
+I1215 15:41:17.697093 139818628030464 baking.py:898] Evaluating 214476 live texels for plane=1.
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:04<00:00,  2.25it/s]
+I1215 15:41:22.611332 139818628030464 baking.py:885] baking triplane plane_idx=2
+I1215 15:41:22.611524 139818628030464 baking.py:890] Dilating triplane feature map with max_filter_size=37
+I1215 15:41:22.670008 139818628030464 baking.py:898] Evaluating 182014 live texels for plane=2.
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:06<00:00,  1.37it/s]
+I1215 15:41:29.269651 139818628030464 baking.py:1393] Estimating VRAM consumption...
+I1215 15:41:29.269804 139818628030464 baking.py:1415] VRAM consumption:
+I1215 15:41:29.269856 139818628030464 baking.py:1417] indirection_grid: 0.09 MiB
+I1215 15:41:29.269885 139818628030464 baking.py:1417] sparse_3d_grid: 33.64 MiB
+I1215 15:41:29.269914 139818628030464 baking.py:1417] total: 39.73 MiB
+I1215 15:41:29.269941 139818628030464 baking.py:1417] triplanes: 6.00 MiB
+I1215 15:41:29.270832 139818628030464 baking.py:1745] Quantizing parameters...
+I1215 15:41:29.970636 139818628030464 baking.py:1545] Computing distance grid of shape (128, 128, 128) with max_distance=128
+I1215 15:41:30.219068 139818628030464 baking.py:1545] Computing distance grid of shape (64, 64, 64) with max_distance=64
+I1215 15:41:30.426085 139818628030464 baking.py:1545] Computing distance grid of shape (32, 32, 32) with max_distance=32
+I1215 15:41:30.616267 139818628030464 baking.py:1545] Computing distance grid of shape (16, 16, 16) with max_distance=16
+I1215 15:41:30.785473 139818628030464 baking.py:1545] Computing distance grid of shape (8, 8, 8) with max_distance=8
+I1215 15:41:30.958802 139818628030464 baking.py:1545] Computing distance grid of shape (4, 4, 4) with max_distance=4
+I1215 15:41:31.094713 139818628030464 baking.py:1781] Saving baked parameters to /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000...
+I1215 15:41:31.095089 139818628030464 checkpointer.py:135] Saving item to /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.
+I1215 15:41:31.283020 139818628030464 utils.py:564] Renaming /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.orbax-checkpoint-tmp-1734273691095295 to /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params
+I1215 15:41:31.283219 139818628030464 utils.py:617] Finished saving checkpoint to `/home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params`.
+I1215 15:41:31.284334 139818628030464 train.py:650] Exporting baked model assets...
+I1215 15:41:32.628539 139818628030464 export.py:460] aggregate_stats={'memory_mb': 46.67266800000002, 'disk_mb': 30.362532}
+Exported scene to /home/flad/smerf/checkpoints/20241212_1014-demo/baked/sm_000
+I1215 15:41:32.897673 139818628030464 train.py:744] Rendering baked representation for submodel #0/1 (#0 of 1)
+I1215 15:41:32.897979 139818628030464 checkpointer.py:166] Restoring item from /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.
+/home/flad/env311/lib/python3.11/site-packages/orbax/checkpoint/type_handlers.py:1555: UserWarning: Couldn't find sharding info under RestoreArgs. Populating sharding info from sharding file. Please note restoration time will be slightly increased due to reading from file instead of directly from RestoreArgs.
+  warnings.warn(
+I1215 15:41:33.118651 139818628030464 checkpointer.py:169] Finished restoring checkpoint from /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.
+I1215 15:41:34.434533 139818628030464 baked_render.py:1049] Rendering frame #0 (0 of 25)
+I1215 15:41:35.643463 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:42:30.724263 139818628030464 baked_render.py:1128] render_idx=0 metric={'psnr': 14.966562271118164, 'ssim': 0.2275780886411667}
+I1215 15:42:30.731243 139818628030464 baked_render.py:1049] Rendering frame #1 (1 of 25)
+I1215 15:42:32.018882 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=I1215 15:43:21.322944 139818628030464 baked_render.py:1128] render_idx=1 metric={'psnr': 14.494784355163574, 'ssim': 0.22247272729873657}
+I1215 15:43:21.329463 139818628030464 baked_render.py:1049] Rendering frame #2 (2 of 25)
+I1215 15:43:22.646089 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:44:10.946162 139818628030464 baked_render.py:1128] render_idx=2 metric={'psnr': 15.657795906066895, 'ssim': 0.24094881117343903}
+I1215 15:44:10.952572 139818628030464 baked_render.py:1049] Rendering frame #3 (3 of 25)
+I1215 15:44:12.293647 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:45:00.754105 139818628030464 baked_render.py:1128] render_idx=3 metric={'psnr': 15.152557373046875, 'ssim': 0.20215125381946564}
+I1215 15:45:00.761013 139818628030464 baked_render.py:1049] Rendering frame #4 (4 of 25)
+I1215 15:45:02.111645 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:45:50.550208 139818628030464 baked_render.py:1128] render_idx=4 metric={'psnr': 14.493877410888672, 'ssim': 0.23955924808979034}
+I1215 15:45:50.557437 139818628030464 baked_render.py:1049] Rendering frame #5 (5 of 25)
+I1215 15:45:51.890160 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:46:39.805144 139818628030464 baked_render.py:1128] render_idx=5 metric={'psnr': 15.284802436828613, 'ssim': 0.27458542585372925}
+I1215 15:46:39.812306 139818628030464 baked_render.py:1049] Rendering frame #6 (6 of 25)
+I1215 15:46:41.119369 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:47:29.159234 139818628030464 baked_render.py:1128] render_idx=6 metric={'psnr': 16.408525466918945, 'ssim': 0.23962704837322235}
+I1215 15:47:29.165802 139818628030464 baked_render.py:1049] Rendering frame #7 (7 of 25)
+I1215 15:47:30.482078 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:48:19.069371 139818628030464 baked_render.py:1128] render_idx=7 metric={'psnr': 16.80261993408203, 'ssim': 0.25352153182029724}
+I1215 15:48:19.075512 139818628030464 baked_render.py:1049] Rendering frame #8 (8 of 25)
+I1215 15:48:20.431096 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:49:08.626346 139818628030464 baked_render.py:1128] render_idx=8 metric={'psnr': 17.758726119995117, 'ssim': 0.3202786147594452}
+I1215 15:49:08.633224 139818628030464 baked_render.py:1049] Rendering frame #9 (9 of 25)
+I1215 15:49:10.000512 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:49:58.296874 139818628030464 baked_render.py:1128] render_idx=9 metric={'psnr': 17.54047393798828, 'ssim': 0.2731856107711792}
+I1215 15:49:58.303723 139818628030464 baked_render.py:1049] Rendering frame #10 (10 of 25)
+I1215 15:49:59.633107 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:50:47.691982 139818628030464 baked_render.py:1128] render_idx=10 metric={'psnr': 16.956907272338867, 'ssim': 0.28029778599739075}
+I1215 15:50:47.699033 139818628030464 baked_render.py:1049] Rendering frame #11 (11 of 25)
+I1215 15:50:49.080475 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:51:37.748738 139818628030464 baked_render.py:1128] render_idx=11 metric={'psnr': 16.362382888793945, 'ssim': 0.2609654366970062}
+I1215 15:51:37.756168 139818628030464 baked_render.py:1049] Rendering frame #12 (12 of 25)
+I1215 15:51:39.110368 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:52:27.058767 139818628030464 baked_render.py:1128] render_idx=12 metric={'psnr': 16.84955406188965, 'ssim': 0.2780929505825043}
+I1215 15:52:27.065464 139818628030464 baked_render.py:1049] Rendering frame #13 (13 of 25)
+I1215 15:52:28.460157 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:53:16.668236 139818628030464 baked_render.py:1128] render_idx=13 metric={'psnr': 17.30297088623047, 'ssim': 0.28712865710258484}
+I1215 15:53:16.675482 139818628030464 baked_render.py:1049] Rendering frame #14 (14 of 25)
+I1215 15:53:18.059795 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:54:06.570556 139818628030464 baked_render.py:1128] render_idx=14 metric={'psnr': 17.71229362487793, 'ssim': 0.3338242173194885}
+I1215 15:54:06.577980 139818628030464 baked_render.py:1049] Rendering frame #15 (15 of 25)
+I1215 15:54:07.989083 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:54:56.482609 139818628030464 baked_render.py:1128] render_idx=15 metric={'psnr': 17.007301330566406, 'ssim': 0.2947196960449219}
+I1215 15:54:56.490009 139818628030464 baked_render.py:1049] Rendering frame #16 (16 of 25)
+I1215 15:54:57.885690 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:55:46.636188 139818628030464 baked_render.py:1128] render_idx=16 metric={'psnr': 17.060394287109375, 'ssim': 0.3496136963367462}
+I1215 15:55:46.642747 139818628030464 baked_render.py:1049] Rendering frame #17 (17 of 25)
+I1215 15:55:48.035763 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:56:36.318273 139818628030464 baked_render.py:1128] render_idx=17 metric={'psnr': 16.723234176635742, 'ssim': 0.2546401619911194}
+I1215 15:56:36.324360 139818628030464 baked_render.py:1049] Rendering frame #18 (18 of 25)
+I1215 15:56:37.725817 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:57:26.033157 139818628030464 baked_render.py:1128] render_idx=18 metric={'psnr': 17.408994674682617, 'ssim': 0.3352980613708496}
+I1215 15:57:26.039592 139818628030464 baked_render.py:1049] Rendering frame #19 (19 of 25)
+I1215 15:57:27.425583 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:58:15.866359 139818628030464 baked_render.py:1128] render_idx=19 metric={'psnr': 18.884166717529297, 'ssim': 0.4086543917655945}
+I1215 15:58:15.872633 139818628030464 baked_render.py:1049] Rendering frame #20 (20 of 25)
+I1215 15:58:17.224010 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:59:04.137193 139818628030464 baked_render.py:1128] render_idx=20 metric={'psnr': 16.675601959228516, 'ssim': 0.29157617688179016}
+I1215 15:59:04.143777 139818628030464 baked_render.py:1049] Rendering frame #21 (21 of 25)
+I1215 15:59:05.535719 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 15:59:52.684021 139818628030464 baked_render.py:1128] render_idx=21 metric={'psnr': 18.652259826660156, 'ssim': 0.3608670234680176}
+I1215 15:59:52.690627 139818628030464 baked_render.py:1049] Rendering frame #22 (22 of 25)
+I1215 15:59:54.106271 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:00:41.435674 139818628030464 baked_render.py:1128] render_idx=22 metric={'psnr': 17.102840423583984, 'ssim': 0.34769105911254883}
+I1215 16:00:41.441914 139818628030464 baked_render.py:1049] Rendering frame #23 (23 of 25)
+I1215 16:00:42.876574 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:01:29.944109 139818628030464 baked_render.py:1128] render_idx=23 metric={'psnr': 16.468828201293945, 'ssim': 0.2598544955253601}
+I1215 16:01:29.950325 139818628030464 baked_render.py:1049] Rendering frame #24 (24 of 25)
+I1215 16:01:31.342241 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:02:18.059776 139818628030464 baked_render.py:1128] render_idx=24 metric={'psnr': 15.333990097045898, 'ssim': 0.3153684139251709}
+I1215 16:02:18.060758 139818628030464 baked_render.py:1148] Average over all test images: {'gt.baked.psnr.avg': 16.60249782562256, 'gt.baked.ssim.avg': 0.2861000233888626, 'gt.baked.lpips_spin.avg': nan, 'gt.baked.lpips_m360.avg': nan}
+I1215 16:02:18.495931 139818628030464 train.py:820] Rendering ellipse path of baked representation for submodel #0/1 (#0 of 1)
+I1215 16:02:18.496252 139818628030464 checkpointer.py:166] Restoring item from /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.
+/home/flad/env311/lib/python3.11/site-packages/orbax/checkpoint/type_handlers.py:1555: UserWarning: Couldn't find sharding info under RestoreArgs. Populating sharding info from sharding file. Please note restoration time will be slightly increased due to reading from file instead of directly from RestoreArgs.
+  warnings.warn(
+I1215 16:02:18.647653 139818628030464 checkpointer.py:169] Finished restoring checkpoint from /home/flad/smerf/checkpoints/20241212_1014-demo/temp/sm_000/baked_params.
+I1215 16:02:19.339874 139818628030464 baked_render.py:1240] Rendering frame #0 (0 of 25)
+I1215 16:02:20.535420 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:03:07.465517 139818628030464 baked_render.py:1240] Rendering frame #2 (1 of 25)
+I1215 16:03:08.728966 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:03:56.001488 139818628030464 baked_render.py:1240] Rendering frame #4 (2 of 25)
+I1215 16:03:57.253182 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:04:44.575764 139818628030464 baked_render.py:1240] Rendering frame #6 (3 of 25)
+I1215 16:04:45.850265 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:05:32.940115 139818628030464 baked_render.py:1240] Rendering frame #8 (4 of 25)
+I1215 16:05:34.189464 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:06:21.799743 139818628030464 baked_render.py:1240] Rendering frame #10 (5 of 25)
+I1215 16:06:23.093882 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:07:10.841796 139818628030464 baked_render.py:1240] Rendering frame #12 (6 of 25)
+I1215 16:07:12.120394 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:07:59.674170 139818628030464 baked_render.py:1240] Rendering frame #14 (7 of 25)
+I1215 16:08:00.983080 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:08:48.533005 139818628030464 baked_render.py:1240] Rendering frame #16 (8 of 25)
+I1215 16:08:49.810134 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:09:37.116162 139818628030464 baked_render.py:1240] Rendering frame #18 (9 of 25)
+I1215 16:09:38.448261 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:10:25.515923 139818628030464 baked_render.py:1240] Rendering frame #20 (10 of 25)
+I1215 16:10:26.869926 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:11:13.951534 139818628030464 baked_render.py:1240] Rendering frame #22 (11 of 25)
+I1215 16:11:15.309591 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:12:03.082803 139818628030464 baked_render.py:1240] Rendering frame #24 (12 of 25)
+I1215 16:12:04.435710 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:12:52.337908 139818628030464 baked_render.py:1240] Rendering frame #26 (13 of 25)
+I1215 16:12:53.689668 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:13:41.230728 139818628030464 baked_render.py:1240] Rendering frame #28 (14 of 25)
+I1215 16:13:42.567880 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:14:29.749925 139818628030464 baked_render.py:1240] Rendering frame #30 (15 of 25)
+I1215 16:14:31.048636 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:15:18.282140 139818628030464 baked_render.py:1240] Rendering frame #32 (16 of 25)
+I1215 16:15:19.626271 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:16:07.270977 139818628030464 baked_render.py:1240] Rendering frame #34 (17 of 25)
+I1215 16:16:08.605508 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:17:01.137034 139818628030464 baked_render.py:1240] Rendering frame #36 (18 of 25)
+I1215 16:17:02.421616 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:17:50.780386 139818628030464 baked_render.py:1240] Rendering frame #38 (19 of 25)
+I1215 16:17:52.106882 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:18:41.013868 139818628030464 baked_render.py:1240] Rendering frame #40 (20 of 25)
+I1215 16:18:42.376708 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:19:30.786978 139818628030464 baked_render.py:1240] Rendering frame #42 (21 of 25)
+I1215 16:19:32.161233 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:20:20.604926 139818628030464 baked_render.py:1240] Rendering frame #44 (22 of 25)
+I1215 16:20:21.960785 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:21:10.293345 139818628030464 baked_render.py:1240] Rendering frame #46 (23 of 25)
+I1215 16:21:11.618870 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+I1215 16:22:00.497604 139818628030464 baked_render.py:1240] Rendering frame #48 (24 of 25)
+I1215 16:22:01.839342 139818628030464 baked_render.py:858] Querying up to num_steps=886 points along each camera ray. The first max_steps=2048 hits will be used in alpha-compositing.
+(env311) flad@FladStand:~/smerf$

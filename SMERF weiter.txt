@@ -1,0 +1,24 @@
+hiermit geht's :
+Create a new environment:
+
+bash
+
+conda create -n smerf-jax python=3.11
+conda activate smerf-jax
+
+Install JAX with CUDA support and SMERF only:
+
+In this new environment, install only JAX with CUDA and SMERF:
+
+bash
+
+pip install "jax[cuda12_pip]==0.4.23" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+pip install smerf
+
+Run the demo script:
+
+After installing, try running demo.sh from the SMERF directory:
+
+bash
+
+./scripts/demo.sh

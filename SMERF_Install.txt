@@ -1,0 +1,227 @@
+Complete Installation Guide for Setting up SMERF with GPU Support on WSL 2 (Ubuntu 22.04) - Updated for SMERF-Specific Steps
+
+This guide provides all required steps, including SMERF-specific setup and verifying installations for CUDA, cuDNN, Python, JAX, and SMERF dependencies.
+Step 1: Clone the SMERF Repository
+
+    Open a WSL 2 Terminal (Ubuntu 22.04).
+
+    Clone the GitHub repository:
+
+    bash
+
+git clone https://github.com/google-research/google-research.git
+cd google-research
+
+Verify successful cloning by checking for the smerf directory within google-research:
+
+bash
+
+    ls
+
+Step 2: Install NVIDIA Drivers, CUDA 12.3, and cuDNN 8.9.7 on WSL 2
+Part A: Install NVIDIA Drivers on Windows
+
+    Open PowerShell or Command Prompt as Administrator on Windows.
+    Download the NVIDIA Driver for WSL:
+        Go to NVIDIA CUDA on WSL and download the 565.90-desktop-win10-win11-64bit-international-nsd-dch-whql.exe driver.
+    Install the Driver:
+        Run the .exe file, follow the on-screen instructions, and restart your computer after the installation.
+
+Part B: Install CUDA 12.3 on WSL 2 (Ubuntu 22.04)
+
+    Open a WSL 2 Terminal (Ubuntu 22.04).
+
+    Add the CUDA Repository Key and Install CUDA:
+
+    bash
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-3
+
+Set Environment Variables by adding CUDA to your PATH and LD_LIBRARY_PATH:
+
+bash
+
+echo 'export PATH=/usr/local/cuda-12.3/bin${PATH:+:${PATH}}' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-12.3/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+source ~/.bashrc
+
+Verify CUDA Installation:
+
+bash
+
+    nvcc --version
+
+    Ensure it displays CUDA version 12.3.
+
+Part C: Install cuDNN 8.9.7 for CUDA 12.3
+
+    Download cuDNN on Windows:
+        Go to the cuDNN download page and select the Local Installer for Ubuntu22.04 x86_64 (Deb) for cuDNN 8.9.7.
+
+    Copy the Downloaded File to WSL:
+        Open PowerShell and use the following command:
+
+    bash
+
+cp /mnt/c/Users/lukas/Downloads/cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb ~/
+
+Switch to WSL 2 Terminal and install cuDNN:
+
+bash
+
+sudo dpkg -i ~/cudnn-local-repo-ubuntu2204-8.9.7.29_1.0-1_amd64.deb
+
+Configure the cuDNN Repository:
+
+bash
+
+sudo nano /etc/apt/sources.list.d/cudnn-local.list
+
+In the editor, add the following line, then save and exit:
+
+plaintext
+
+deb [signed-by=/usr/share/keyrings/cudnn-local-08A7D361-keyring.gpg] file:/var/cudnn-local-repo-ubuntu2204-8.9.7.29 /
+
+Update and Install cuDNN Packages:
+
+bash
+
+sudo apt-get update
+sudo apt-get install -y libcudnn8 libcudnn8-dev libcudnn8-samples
+
+Install FreeImage Library (required for cuDNN sample compilation):
+
+bash
+
+sudo apt-get install -y libfreeimage-dev
+
+Copy, Clean, and Rebuild the cuDNN Samples:
+
+bash
+
+cp -r /usr/src/cudnn_samples_v8/ $HOME
+cd $HOME/cudnn_samples_v8/mnistCUDNN
+make clean && make
+
+Run the cuDNN Sample to confirm the installation:
+
+bash
+
+    ./mnistCUDNN
+
+Step 3: Install Miniconda and Set Up a Python Environment for SMERF
+
+    Install Miniconda in WSL:
+        Download the installer:
+
+    bash
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+Run the installer:
+
+bash
+
+bash Miniconda3-latest-Linux-x86_64.sh
+
+Create a Conda Environment for SMERF with Python 3.11:
+
+bash
+
+    conda create --name smerf-env python=3.11
+    conda activate smerf-env
+
+Step 4: Install JAX with GPU Support
+
+    In the Conda Environment, Install JAX:
+
+    bash
+
+    python3 -m pip install --upgrade "jax[cuda12_pip]==0.4.23" \
+      -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+Step 5: Install SMERF Locally
+
+    Navigate to the SMERF Directory:
+
+    bash
+
+cd google-research/smerf
+
+Install SMERF and Dependencies from requires.txt:
+
+bash
+
+    pip install -r smerf.egg-info/requires.txt
+    python3 -m pip install -e .
+
+Step 6: Training SMERF - Prepare Datasets and Checkpoints
+
+    Download and Structure Datasets:
+        Download the mip-NeRF 360 and Zip-NeRF datasets, and arrange them as follows:
+
+    plaintext
+
+smerf/datasets/
+  bicycle/
+    images/
+    images_2/
+    images_4/
+    images_8/
+    sparse/0/   # COLMAP camera parameters
+
+Download Teacher Checkpoints (When Available):
+
+    Arrange checkpoints as follows:
+
+plaintext
+
+    smerf/teachers/
+      bicycle/
+        checkpoint_50000/   # Model checkpoint
+        config.gin          # Gin config
+
+Step 7: Run the SMERF Pipeline
+
+    Execute Demo and Training Scripts:
+        For a small model training on a single GPU:
+
+    bash
+
+./scripts/demo.sh
+
+IST DER ORDNER DER ERSTELLT WIRD DAFÜR CORRECT: C:\Users\lukas\GIT\SMERF\google-research\smerf\C...
+ODER IST DAS WEGEN EINER ÄNDERUNG MEINERSEITS
+
+    For full mip-NeRF 360 scenes:
+
+bash
+
+./scripts/mipnerf360.sh
+
+    For Zip-NeRF scenes:
+
+bash
+
+    ./scripts/zipnerf.sh
+
+Optional: Set Up the Web Viewer
+
+    Copy Baked Assets to Web Viewer Directory:
+        After training, baked assets will be under ${CHECKPOINT_DIR}/baked. Link them as follows:
+
+    bash
+
+mkdir -p webviewer/bicycle
+ln -s ${CHECKPOINT_DIR}/baked webviewer/bicycle
+
+Launch the Web Viewer:
+
+bash
+
+cd webviewer
+BAKED_SCENE_DIR="bicycle" ./launch_webserver.sh
