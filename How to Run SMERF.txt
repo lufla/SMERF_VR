@@ -1,0 +1,9 @@
+Open Anaconda Terminal
+
+conda activate smerf-env
+
+cd C:\Users\lukas\GIT\SMERF\google-research\smerf\webviewer
+
+python -m http.server 8000
+
+http://localhost:8000/?dir=bicycle/sm_000&quality=high&combineMode=concat_and_sum&s=1245,825&vfovy=40.038544&useDistanceGrid=true&useBits=true&mouseMode=fps
