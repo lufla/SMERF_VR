@@ -1,0 +1,641 @@
+{
+  "activation": "elu",
+  "asset_metadata": [
+    {
+      "dtype": "uint8",
+      "filename": "plane_features_0.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_rgb_0.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_density_0.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_features_1.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_rgb_1.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_density_1.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_features_2.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_rgb_2.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "plane_density_2.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        512,
+        512,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_block_indices.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        1024,
+        32,
+        3
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_001.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 1
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_002.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 2
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_003.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 3
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_004.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 4
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_005.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 5
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_006.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 6
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_007.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 7
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_features_008.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 8
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_001.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 1
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_002.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 2
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_003.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 3
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_004.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 4
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_005.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 5
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_006.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 6
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_007.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 7
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_rgb_008.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        3
+      ],
+      "slice_count": 9,
+      "slice_idx": 8
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_001.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 1
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_002.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 2
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_003.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 3
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_004.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 4
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_005.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 5
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_006.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 6
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_007.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 7
+    },
+    {
+      "dtype": "uint8",
+      "filename": "sparse_grid_density_008.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        243,
+        2016,
+        2
+      ],
+      "slice_count": 9,
+      "slice_idx": 8
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_4_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        16384,
+        128,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_8_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        4096,
+        64,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_16_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        1024,
+        32,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_32_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        256,
+        16,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_64_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        64,
+        8,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "occupancy_grid_128_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        16,
+        4,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_4_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        16384,
+        128,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_8_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        4096,
+        64,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_16_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        1024,
+        32,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_32_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        256,
+        16,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_64_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        64,
+        8,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    },
+    {
+      "dtype": "uint8",
+      "filename": "distance_grid_128_000.raw.gz",
+      "format": "raw.gz",
+      "shape": [
+        16,
+        4,
+        1
+      ],
+      "slice_count": 1,
+      "slice_idx": 0
+    }
+  ],
+  "atlas_depth": 9,
+  "atlas_height": 243,
+  "atlas_width": 2016,
+  "data_block_size": 8,
+  "default_exposure": null,
+  "deferred_rendering_mode": "snerg",
+  "export_apply_zdiff_to_slices": false,
+  "export_array_format": "raw.gz",
+  "export_pad_occupancy_and_distance_grids": false,
+  "export_slice_occupancy_and_distance_grids": true,
+  "export_store_deferred_mlp_separately": true,
+  "export_store_rgb_and_density_separately": true,
+  "exposure_range": null,
+  "feature_gating": true,
+  "merge_features_combine_op": "coarse_sum",
+  "num_local_submodels": 1,
+  "num_slices": 9,
+  "num_submodel_hash_encoding_kernels": 1,
+  "num_submodel_mlp_kernels": 1,
+  "num_submodels": 1,
+  "params_to_sm": [
+    0
+  ],
+  "range_density": [
+    -14.0,
+    14.0
+  ],
+  "range_features": [
+    -7.0,
+    7.0
+  ],
+  "resolution_to_use": 512,
+  "slice_depth": 1,
+  "sm_to_params": [
+    0
+  ],
+  "sparse_grid_resolution": 256,
+  "sparse_grid_voxel_size": 0.015625,
+  "submodel_idx": 0,
+  "submodel_idx_override": null,
+  "submodel_scale": 2.5,
+  "submodel_voxel_size": 2.0,
+  "submodels_on_host": [
+    0
+  ],
+  "triplane_resolution": 512,
+  "triplane_voxel_size": 0.0078125,
+  "voxel_size_to_use": 0.0078125
+}

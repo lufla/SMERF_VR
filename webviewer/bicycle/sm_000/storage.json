@@ -1,0 +1,252 @@
+[
+  {
+    "disk_mb": 0.610275,
+    "filename": "plane_features_0.raw.gz",
+    "memory_mb": 1.048576
+  },
+  {
+    "disk_mb": 0.413687,
+    "filename": "plane_rgb_0.raw.gz",
+    "memory_mb": 0.786432
+  },
+  {
+    "disk_mb": 0.163447,
+    "filename": "plane_density_0.raw.gz",
+    "memory_mb": 0.262144
+  },
+  {
+    "disk_mb": 0.681275,
+    "filename": "plane_features_1.raw.gz",
+    "memory_mb": 1.048576
+  },
+  {
+    "disk_mb": 0.470823,
+    "filename": "plane_rgb_1.raw.gz",
+    "memory_mb": 0.786432
+  },
+  {
+    "disk_mb": 0.18305,
+    "filename": "plane_density_1.raw.gz",
+    "memory_mb": 0.262144
+  },
+  {
+    "disk_mb": 0.579701,
+    "filename": "plane_features_2.raw.gz",
+    "memory_mb": 1.048576
+  },
+  {
+    "disk_mb": 0.393588,
+    "filename": "plane_rgb_2.raw.gz",
+    "memory_mb": 0.786432
+  },
+  {
+    "disk_mb": 0.155593,
+    "filename": "plane_density_2.raw.gz",
+    "memory_mb": 0.262144
+  },
+  {
+    "disk_mb": 0.015653,
+    "filename": "sparse_grid_block_indices.raw.gz",
+    "memory_mb": 0.098304
+  },
+  {
+    "disk_mb": 1.133982,
+    "filename": "sparse_grid_features_000.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.133267,
+    "filename": "sparse_grid_features_001.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.131321,
+    "filename": "sparse_grid_features_002.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.13012,
+    "filename": "sparse_grid_features_003.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.129159,
+    "filename": "sparse_grid_features_004.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.128766,
+    "filename": "sparse_grid_features_005.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.129845,
+    "filename": "sparse_grid_features_006.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.13103,
+    "filename": "sparse_grid_features_007.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.13138,
+    "filename": "sparse_grid_features_008.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.002502,
+    "filename": "sparse_grid_rgb_000.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.001585,
+    "filename": "sparse_grid_rgb_001.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 0.999953,
+    "filename": "sparse_grid_rgb_002.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 0.999416,
+    "filename": "sparse_grid_rgb_003.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 0.998764,
+    "filename": "sparse_grid_rgb_004.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 0.998443,
+    "filename": "sparse_grid_rgb_005.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.000138,
+    "filename": "sparse_grid_rgb_006.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.001381,
+    "filename": "sparse_grid_rgb_007.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 1.001854,
+    "filename": "sparse_grid_rgb_008.raw.gz",
+    "memory_mb": 1.469664
+  },
+  {
+    "disk_mb": 0.794519,
+    "filename": "sparse_grid_density_000.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.794289,
+    "filename": "sparse_grid_density_001.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.793476,
+    "filename": "sparse_grid_density_002.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.793027,
+    "filename": "sparse_grid_density_003.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.79255,
+    "filename": "sparse_grid_density_004.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.792717,
+    "filename": "sparse_grid_density_005.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.793038,
+    "filename": "sparse_grid_density_006.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.793565,
+    "filename": "sparse_grid_density_007.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.793541,
+    "filename": "sparse_grid_density_008.raw.gz",
+    "memory_mb": 0.979776
+  },
+  {
+    "disk_mb": 0.121542,
+    "filename": "occupancy_grid_4_000.raw.gz",
+    "memory_mb": 2.097152
+  },
+  {
+    "disk_mb": 0.027596,
+    "filename": "occupancy_grid_8_000.raw.gz",
+    "memory_mb": 0.262144
+  },
+  {
+    "disk_mb": 0.006343,
+    "filename": "occupancy_grid_16_000.raw.gz",
+    "memory_mb": 0.032768
+  },
+  {
+    "disk_mb": 0.001421,
+    "filename": "occupancy_grid_32_000.raw.gz",
+    "memory_mb": 0.004096
+  },
+  {
+    "disk_mb": 0.000341,
+    "filename": "occupancy_grid_64_000.raw.gz",
+    "memory_mb": 0.000512
+  },
+  {
+    "disk_mb": 8.4e-05,
+    "filename": "occupancy_grid_128_000.raw.gz",
+    "memory_mb": 6.4e-05
+  },
+  {
+    "disk_mb": 0.174535,
+    "filename": "distance_grid_4_000.raw.gz",
+    "memory_mb": 2.097152
+  },
+  {
+    "disk_mb": 0.024556,
+    "filename": "distance_grid_8_000.raw.gz",
+    "memory_mb": 0.262144
+  },
+  {
+    "disk_mb": 0.002976,
+    "filename": "distance_grid_16_000.raw.gz",
+    "memory_mb": 0.032768
+  },
+  {
+    "disk_mb": 0.000349,
+    "filename": "distance_grid_32_000.raw.gz",
+    "memory_mb": 0.004096
+  },
+  {
+    "disk_mb": 4.2e-05,
+    "filename": "distance_grid_64_000.raw.gz",
+    "memory_mb": 0.000512
+  },
+  {
+    "disk_mb": 2.4e-05,
+    "filename": "distance_grid_128_000.raw.gz",
+    "memory_mb": 6.4e-05
+  },
+  {
+    "disk_mb": 0.012003,
+    "filename": "scene_params.json",
+    "memory_mb": 0.21750000000000003
+  }
+]
