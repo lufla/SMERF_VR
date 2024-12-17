@@ -4,7 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="" />
+    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="commit fist part to get everything up to date">
+      <change afterPath="$PROJECT_DIR$/webtester/webxr-samples/localhost-key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/webxr-samples/localhost.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Fist run comand prompts.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/How to Run SMERF.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMERF weiter.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMERF_Install.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMERF_Install_mit dem anderen Verbinden.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMERF_low_quality.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/from http tp https.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/launch_webserver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/launch_webserver.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/launch_webserver_utils.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/launch_webserver_utils.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/webviewer2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/benchmark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/bicycle/baked" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/copyslices.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/create_texture.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/defaultposes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/deps/png.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/deps/zlib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/fetch_asset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/fragment.glsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/globals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/launch_webserver.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/launch_webserver_utils.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/loadpng.worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/populate_texture.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/prepare_payload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/progressive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/scene_spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/texture_manager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/viewdependency.glsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/viewdependency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer2/worker_pool.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +55,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lufla"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lufla/SMERF_VR.git",
+    "accountId": "f533ceb9-2dc3-4f17-9f52-d63542816f12"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -27,13 +81,52 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/home/flad/smerf",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
+    <layout>
+      <window_info id="Bookmarks" side_tool="true" />
+      <window_info id="Commit_Guest" show_stripe_button="false" />
+      <window_info id="Pull Requests" />
+      <window_info id="Merge Requests" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32984102" />
+      <window_info id="Commit" order="1" weight="0.32984102" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="File Transfer" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Problems" order="1" />
+      <window_info anchor="bottom" id="Problems View" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
+      <window_info anchor="right" id="Endpoints" />
+      <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
+      <window_info anchor="right" id="AIAssistant" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DOCS" />
+      <recent name="$PROJECT_DIR$/webtester" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.112" />
       </set>
     </attachedChunks>
   </component>
@@ -45,7 +138,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733355271558</updated>
+      <workItem from="1734397889791" duration="685000" />
     </task>
+    <task id="LOCAL-00001" summary="commit fist part to get everything up to date">
+      <option name="closed" value="true" />
+      <created>1734398276994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734398276994</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit fist part to get everything up to date" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit fist part to get everything up to date" />
   </component>
 </project>
