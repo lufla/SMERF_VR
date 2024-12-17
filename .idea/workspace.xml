@@ -5,47 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="commit fist part to get everything up to date">
-      <change afterPath="$PROJECT_DIR$/webtester/webxr-samples/localhost-key.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webtester/webxr-samples/localhost.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Fist run comand prompts.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/How to Run SMERF.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SMERF weiter.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SMERF_Install.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SMERF_Install_mit dem anderen Verbinden.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SMERF_low_quality.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/from http tp https.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer/launch_webserver.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/launch_webserver.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer/launch_webserver_utils.sh" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/launch_webserver_utils.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/.idea/webviewer2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/benchmark.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/bicycle/baked" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/copyslices.worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/create_texture.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/defaultposes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/deps/png.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/deps/zlib.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/fetch_asset.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/fragment.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/globals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/input.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/launch_webserver.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/launch_webserver_utils.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/loadpng.worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/populate_texture.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/prepare_payload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/progressive.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/scene_spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/texture_manager.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/viewdependency.glsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/viewdependency.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer2/worker_pool.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/cert.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/tree_tester/VRButton.js:Zone.Identifier" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtester/tree_tester/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webviewer/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +19,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -96,8 +62,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Merge Requests" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32984102" />
-      <window_info id="Commit" order="1" weight="0.32984102" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.32984102" />
+      <window_info active="true" id="Commit" order="1" visible="true" weight="0.32984102" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -138,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733355271558</updated>
-      <workItem from="1734397889791" duration="685000" />
+      <workItem from="1734397889791" duration="985000" />
     </task>
     <task id="LOCAL-00001" summary="commit fist part to get everything up to date">
       <option name="closed" value="true" />
@@ -148,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734398276994</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit fist part to get everything up to date">
+      <option name="closed" value="true" />
+      <created>1734398874631</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734398874631</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
