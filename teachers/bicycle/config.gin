@@ -1,0 +1,310 @@
+# Parameters for Config:
+# ==============================================================================
+Config.adam_beta1 = 0.9
+Config.adam_beta2 = 0.99
+Config.adam_eps = 1e-15
+Config.batch_size = 65536
+Config.cast_rays_in_eval_step = True
+Config.cast_rays_in_train_step = True
+Config.checkpoint_dir = \
+    'teachers/bicycle'
+Config.checkpoint_every = 5000
+Config.data_dir = 'datasets/bicycle'
+Config.dataset_loader = 'llff'
+Config.distortion_loss_curve_fn = \
+    (@math.power_ladder, {'p': -0.25, 'premult': 10000.0})
+Config.distortion_loss_mult = 0.005
+Config.distortion_loss_target = 'tdist'
+Config.eval_only_once = False
+Config.eval_save_output = True
+Config.factor = 4
+Config.far = 1000000.0
+Config.grad_max_norm = 0.0
+Config.grad_max_val = 0.0
+Config.lr_delay_mult = 1e-08
+Config.lr_delay_steps = 2500
+Config.lr_final = 0.001
+Config.lr_init = 0.01
+Config.max_steps = 500 #back to 2500
+Config.metric_harness_eval_config = {}
+Config.near = 0.0
+Config.param_regularizers = \
+    {'grid_0': (0.1, @jnp.mean, 2, 1),
+     'grid_1': (0.1, @jnp.mean, 2, 1),
+     'grid_2': (0.1, @jnp.mean, 2, 1)}
+Config.print_every = 100
+Config.render_chunk_size = 65536
+Config.spline_interlevel_params = {'blurs': (0.03, 0.003), 'mults': 0.01}
+Config.train_render_every = 0
+
+Config.visualize_every = 1000
+
+# Parameters for HashEncoding:
+# ==============================================================================
+HashEncoding.hash_map_size = 4194304
+HashEncoding.max_grid_size = 8192
+HashEncoding.scale_supersample = 1.0
+
+# Parameters for MLP:
+# ==============================================================================
+MLP.bottleneck_width = 256
+MLP.density_activation = @math.safe_exp
+MLP.disable_density_normals = True
+
+MLP.net_depth = 1
+MLP.net_depth_viewdirs = 3
+MLP.net_width = 64
+MLP.net_width_viewdirs = 256
+MLP.skip_layer_dir = 2
+MLP.unscented_mip_basis = 'hexify'
+MLP.unscented_scale_mult = 0.5
+MLP.warp_fn = @coord.contract
+
+# Parameters for Model:
+# ==============================================================================
+Model.bg_intensity_range = (0, 1)
+
+
+Model.grid_params_per_level = \
+    ({'max_grid_size': 512, 'num_features': 1},
+     {'max_grid_size': 2048, 'num_features': 1},
+     {'num_features': 4})
+Model.mlp_params_per_level = ({'disable_rgb': True}, {'disable_rgb': True}, {})
+Model.num_glo_features = 0
+Model.raydist_fn = \
+    (@math.power_ladder, @math.inv_power_ladder, {'p': -1.5, 'premult': 2})
+Model.sampling_strategy = ((0, 0, 64), (1, 1, 64), (2, 2, 32))
+
+# Macros:
+# ==============================================================================
+CAMERA_END_LR = 1e-05
+CAMERA_INIT_LR = 0.0001
+DIAG_RELPAD = 0.1
+NORMALIZE_EIGVALS = False
+NUM_POINTS = 5000
+POINT_SAMPLE_METHOD = 'frustum_raydist_fn'
+PRECONDITION_FAR = 1000.0
+PRECONDITION_MOMENTUM = 1.0
+PRECONDITION_NEAR = 0.4
+PRECONDITION_RAYDIST_FN_KWARGS = \
+    {'p': %RAYDIST_FN_P, 'premult': %RAYDIST_FN_PREMULT}
+RAYDIST_FN_P = -1.5
+RAYDIST_FN_PREMULT = 1
+SCALE_PIXEL_UNITS_TO_METRIC = True
+USE_FULL_MATRIX = True
+USE_LOG_SCALES = True
+USE_PRECONDITION = True
+USE_PRINCIPAL_POINT = True
+
+
+Config.camera_delta_cls = @camera_delta.IntrinsicSE3WithFocalCameraDelta
+Config.camera_lr_schedule_def = \
+    (@math.create_learning_rate_decay,
+     {'lr_delay_mult': 1e-08,
+      'lr_delay_steps': 2500,
+      'lr_final': %CAMERA_END_LR,
+      'lr_init': %CAMERA_INIT_LR,
+      'max_steps': 500})
+Config.camera_optimizer = @optax.adam
+Config.camera_optimizer_kwargs = {'b1': 0.9, 'b2': 0.99}
+Config.test_camera_delta_cls = @test/camera_delta.IntrinsicFocalPoseCameraDelta
+
+# Parameters for camera_delta.DollyCameraDelta:
+# ==============================================================================
+camera_delta.DollyCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.DollyCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.DollyCameraDelta.precondition_momentum = %PRECONDITION_MOMENTUM
+camera_delta.DollyCameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.DollyCameraDelta.precondition_normalize_eigvals = %NORMALIZE_EIGVALS
+camera_delta.DollyCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.DollyCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.DollyCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.DollyCameraDelta.precondition_running_estimate = True
+camera_delta.DollyCameraDelta.precondition_use_full_matrix = %USE_FULL_MATRIX
+camera_delta.DollyCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.DollyCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.DollyCameraDelta.use_precondition = %USE_PRECONDITION
+camera_delta.DollyCameraDelta.use_se3 = True
+
+# Parameters for camera_delta.FocalPoseCameraDelta:
+# ==============================================================================
+camera_delta.FocalPoseCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.FocalPoseCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.FocalPoseCameraDelta.precondition_momentum = %PRECONDITION_MOMENTUM
+camera_delta.FocalPoseCameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.FocalPoseCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+camera_delta.FocalPoseCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.FocalPoseCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.FocalPoseCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.FocalPoseCameraDelta.precondition_running_estimate = True
+camera_delta.FocalPoseCameraDelta.precondition_use_full_matrix = %USE_FULL_MATRIX
+camera_delta.FocalPoseCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.FocalPoseCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.FocalPoseCameraDelta.use_precondition = %USE_PRECONDITION
+
+# Parameters for camera_delta.IntrinsicDollyCameraDelta:
+# ==============================================================================
+camera_delta.IntrinsicDollyCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.IntrinsicDollyCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.IntrinsicDollyCameraDelta.precondition_momentum = \
+    %PRECONDITION_MOMENTUM
+camera_delta.IntrinsicDollyCameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.IntrinsicDollyCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+camera_delta.IntrinsicDollyCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.IntrinsicDollyCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.IntrinsicDollyCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.IntrinsicDollyCameraDelta.precondition_running_estimate = True
+camera_delta.IntrinsicDollyCameraDelta.precondition_use_full_matrix = \
+    %USE_FULL_MATRIX
+camera_delta.IntrinsicDollyCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.IntrinsicDollyCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.IntrinsicDollyCameraDelta.use_precondition = %USE_PRECONDITION
+camera_delta.IntrinsicDollyCameraDelta.use_principal_point = %USE_PRINCIPAL_POINT
+camera_delta.IntrinsicDollyCameraDelta.use_se3 = True
+
+# Parameters for camera_delta.IntrinsicFocalPoseCameraDelta:
+# ==============================================================================
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_momentum = \
+    %PRECONDITION_MOMENTUM
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_running_estimate = True
+camera_delta.IntrinsicFocalPoseCameraDelta.precondition_use_full_matrix = \
+    %USE_FULL_MATRIX
+camera_delta.IntrinsicFocalPoseCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.IntrinsicFocalPoseCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.IntrinsicFocalPoseCameraDelta.use_precondition = %USE_PRECONDITION
+camera_delta.IntrinsicFocalPoseCameraDelta.use_principal_point = \
+    %USE_PRINCIPAL_POINT
+
+# Parameters for test/camera_delta.IntrinsicFocalPoseCameraDelta:
+# ==============================================================================
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_far = \
+    %PRECONDITION_FAR
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_near = \
+    %PRECONDITION_NEAR
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_num_points = \
+    %NUM_POINTS
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+test/camera_delta.IntrinsicFocalPoseCameraDelta.precondition_use_full_matrix = True
+test/camera_delta.IntrinsicFocalPoseCameraDelta.scale_pixel_units_to_metric_units = \
+    True
+test/camera_delta.IntrinsicFocalPoseCameraDelta.use_log_scales = True
+test/camera_delta.IntrinsicFocalPoseCameraDelta.use_precondition = True
+test/camera_delta.IntrinsicFocalPoseCameraDelta.use_principal_point = True
+test/camera_delta.IntrinsicFocalPoseCameraDelta.use_radial_distortion = True
+
+# Parameters for camera_delta.IntrinsicSE3WithFocalCameraDelta:
+# ==============================================================================
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_momentum = \
+    %PRECONDITION_MOMENTUM
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_near = \
+    %PRECONDITION_NEAR
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_running_estimate = True
+camera_delta.IntrinsicSE3WithFocalCameraDelta.precondition_use_full_matrix = \
+    %USE_FULL_MATRIX
+camera_delta.IntrinsicSE3WithFocalCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.IntrinsicSE3WithFocalCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.IntrinsicSE3WithFocalCameraDelta.use_precondition = %USE_PRECONDITION
+camera_delta.IntrinsicSE3WithFocalCameraDelta.use_principal_point = \
+    %USE_PRINCIPAL_POINT
+
+# Parameters for SCNeRFCameraDelta:
+# ==============================================================================
+SCNeRFCameraDelta.precondition_diagonal_relative_padding_scale = %DIAG_RELPAD
+SCNeRFCameraDelta.precondition_far = %PRECONDITION_FAR
+SCNeRFCameraDelta.precondition_momentum = %PRECONDITION_MOMENTUM
+SCNeRFCameraDelta.precondition_near = %PRECONDITION_NEAR
+SCNeRFCameraDelta.precondition_normalize_eigvals = %NORMALIZE_EIGVALS
+SCNeRFCameraDelta.precondition_num_points = %NUM_POINTS
+SCNeRFCameraDelta.precondition_point_sample_method = %POINT_SAMPLE_METHOD
+SCNeRFCameraDelta.precondition_raydist_fn_kwargs = %PRECONDITION_RAYDIST_FN_KWARGS
+SCNeRFCameraDelta.precondition_running_estimate = True
+SCNeRFCameraDelta.precondition_use_full_matrix = %USE_FULL_MATRIX
+SCNeRFCameraDelta.scale_pixel_units_to_metric_units = %SCALE_PIXEL_UNITS_TO_METRIC
+SCNeRFCameraDelta.use_log_scales = %USE_LOG_SCALES
+SCNeRFCameraDelta.use_precondition = %USE_PRECONDITION
+SCNeRFCameraDelta.use_principal_point = %USE_PRINCIPAL_POINT
+
+# Parameters for camera_delta.SE3CameraDelta:
+# ==============================================================================
+camera_delta.SE3CameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.SE3CameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.SE3CameraDelta.precondition_momentum = %PRECONDITION_MOMENTUM
+camera_delta.SE3CameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.SE3CameraDelta.precondition_normalize_eigvals = %NORMALIZE_EIGVALS
+camera_delta.SE3CameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.SE3CameraDelta.precondition_point_sample_method = %POINT_SAMPLE_METHOD
+camera_delta.SE3CameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.SE3CameraDelta.precondition_running_estimate = True
+camera_delta.SE3CameraDelta.precondition_use_full_matrix = %USE_FULL_MATRIX
+camera_delta.SE3CameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.SE3CameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.SE3CameraDelta.use_precondition = %USE_PRECONDITION
+
+# Parameters for camera_delta.SE3WithFocalCameraDelta:
+# ==============================================================================
+camera_delta.SE3WithFocalCameraDelta.precondition_diagonal_relative_padding_scale = \
+    %DIAG_RELPAD
+camera_delta.SE3WithFocalCameraDelta.precondition_far = %PRECONDITION_FAR
+camera_delta.SE3WithFocalCameraDelta.precondition_momentum = %PRECONDITION_MOMENTUM
+camera_delta.SE3WithFocalCameraDelta.precondition_near = %PRECONDITION_NEAR
+camera_delta.SE3WithFocalCameraDelta.precondition_normalize_eigvals = \
+    %NORMALIZE_EIGVALS
+camera_delta.SE3WithFocalCameraDelta.precondition_num_points = %NUM_POINTS
+camera_delta.SE3WithFocalCameraDelta.precondition_point_sample_method = \
+    %POINT_SAMPLE_METHOD
+camera_delta.SE3WithFocalCameraDelta.precondition_raydist_fn_kwargs = \
+    %PRECONDITION_RAYDIST_FN_KWARGS
+camera_delta.SE3WithFocalCameraDelta.precondition_running_estimate = True
+camera_delta.SE3WithFocalCameraDelta.precondition_use_full_matrix = \
+    %USE_FULL_MATRIX
+camera_delta.SE3WithFocalCameraDelta.scale_pixel_units_to_metric_units = \
+    %SCALE_PIXEL_UNITS_TO_METRIC
+camera_delta.SE3WithFocalCameraDelta.use_log_scales = %USE_LOG_SCALES
+camera_delta.SE3WithFocalCameraDelta.use_precondition = %USE_PRECONDITION
