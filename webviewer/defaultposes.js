@@ -23,6 +23,13 @@
  *   current submodel.
  */
 function setupInitialCameraPose(dirUrl, submodelCenter) {
+  console.log('Setting up initial camera pose...');
+  // Ensure camera controls are initialized
+  if (!gOrbitControls && !gMapControls) {
+    console.warn('Initializing default camera controls...');
+    gOrbitControls = new THREE.OrbitControls(gCamera, gRenderer.domElement);
+    gOrbitControls.target.set(0, 0, 0);
+  }
   initialPoses = {
     'default': {
       'position': [0.0, 0.0, 0.0],
@@ -78,6 +85,8 @@ function setupInitialCameraPose(dirUrl, submodelCenter) {
     },
   };
 
+
+
   /**
    * Quick helper function to set the lookat point regardless of camera
    * controls.
@@ -85,41 +94,41 @@ function setupInitialCameraPose(dirUrl, submodelCenter) {
    * @param {number} y
    * @param {number} z
    */
+
   function cameraLookAt(x, y, z) {
-    if (gOrbitControls) {
-      gOrbitControls.target.x = x;
-      gOrbitControls.target.y = y;
-      gOrbitControls.target.z = z;
-    }
-    else if (gMapControls) {
-      gMapControls.target.x =
-        gCamera.position.x + (x - gCamera.position.x) * gCamera.near;
-      gMapControls.target.y =
-        gCamera.position.y + (y - gCamera.position.y) * gCamera.near;
-      gMapControls.target.z =
-        gCamera.position.z + (z - gCamera.position.z) * gCamera.near;
-    }
-    else {
+    if (typeof gOrbitControls !== 'undefined' && gOrbitControls) {
+      gOrbitControls.target.set(x, y, z);
+    } else if (typeof gMapControls !== 'undefined' && gMapControls) {
+      gMapControls.target.set(x, y, z);
+    } else {
       gCamera.lookAt(x, y, z);
     }
   }
 
+
   function setCameraPose(d) {
-    gCamera.position.x = d['position'][0] + submodelCenter.x;
-    gCamera.position.y = d['position'][1] + submodelCenter.y;
-    gCamera.position.z = d['position'][2] + submodelCenter.z;
+    gCamera.position.set(
+        d['position'][0] + submodelCenter.x,
+        d['position'][1] + submodelCenter.y,
+        d['position'][2] + submodelCenter.z
+    );
     cameraLookAt(
-      d['lookat'][0] + submodelCenter.x,
-      d['lookat'][1] + submodelCenter.y,
-      d['lookat'][2] + submodelCenter.z);
+        d['lookat'][0] + submodelCenter.x,
+        d['lookat'][1] + submodelCenter.y,
+        d['lookat'][2] + submodelCenter.z
+    );
   }
 
+  // Default pose
   setCameraPose(initialPoses['default']);
   for (let sceneName in initialPoses) {
     if (dirUrl.includes(sceneName)) {
+      console.log(`Applying camera pose for scene: ${sceneName}`);
       setCameraPose(initialPoses[sceneName]);
       break;
     }
   }
+
   gCamera.updateProjectionMatrix();
+  console.log('Camera pose set successfully.');
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Website Viewer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@webxr-input-profiles/assets@1.0.0/dist/profiles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/webxr/WebXRButton.js"></script>
+</head>
+<body>
+<button id="enter-vr" style="position: absolute; top: 10px; left: 10px; z-index: 999;">Enter VR</button>
+<script>
+  // Scene, Camera, Renderer
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.xr.enabled = true;
+  document.body.appendChild(renderer.domElement);
+
+  // Add VR Button
+  document.body.appendChild(THREE.WebXRButton.createButton(renderer));
+
+  // Plane to Render Website
+  const planeGeometry = new THREE.PlaneGeometry(3, 2); // Width, Height
+  const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+  const websitePlane = new THREE.Mesh(planeGeometry, planeMaterial);
+  websitePlane.position.z = -2; // Move plane in front of the user
+  scene.add(websitePlane);
+
+  // Load Website as Texture
+  const textureLoader = new THREE.TextureLoader();
+  textureLoader.load(
+          'https://via.placeholder.com/512', // Placeholder for now. Add a screenshot of the website or generate one dynamically.
+          (texture) => {
+            planeMaterial.map = texture;
+            planeMaterial.needsUpdate = true;
+          },
+          undefined,
+          (err) => console.error('Error loading texture', err)
+  );
+
+  // Environment
+  const light = new THREE.AmbientLight(0xffffff, 1);
+  scene.add(light);
+
+  // Animation Loop
+  function animate() {
+    renderer.setAnimationLoop(() => {
+      renderer.render(scene, camera);
+    });
+  }
+
+  animate();
+</script>
+</body>
+</html>
