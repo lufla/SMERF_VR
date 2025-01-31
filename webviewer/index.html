@@ -20,7 +20,7 @@
   <meta charset=utf-8>
   <link rel="icon" href="data:,">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <title>BlockMERF Viewer</title>
+  <title>BlockSMERF Viewer</title>
   <style>
     body {
       font-family: Helvetica, "Helvetica Neue", sans-serif;
@@ -176,36 +176,23 @@ Click me to start benchmarking when the frame-rate is behaving reasonably.
 <!-- shader editor -->
 <textarea id="shader-editor" rows="50" cols="200"></textarea>
 
-<!-- third party -->
 <!--
-
-<script src="https://unpkg.com/three@0.113.1/build/three.js"></script>
+  Remove or comment out old three.js and controls:
+  <script src="https://cdn.jsdelivr.net/npm/three@0.113.1/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.113.1/examples/js/controls/PointerLockControls.js"></script>
 -->
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.113.1/build/three.min.js"></script>
-<script src="https://unpkg.com/three@0.113.1/examples/js/controls/OrbitControls.js"></script>
-<script src="https://unpkg.com/three@0.113.1/examples/js/controls/PointerLockControls.js"></script>
-<!-- <script src="https://unpkg.com/png-js@1.0.0/zlib.js"></script> -->
-<!-- <script src="https://unpkg.com/png-js@1.0.0/png.js"></script> -->
+<!-- Keep only the scripts you still need -->
 <script src="https://unpkg.com/stats-js@1.0.1/build/stats.min.js"></script>
 <script src="https://unpkg.com/file-saver@2.0.0-rc.2/dist/FileSaver.min.js"></script>
-
-<!-- Use if you've downloaded these scripts locally. -->
-<!-- <script src="deps/three.js"></script> -->
-<!-- <script src="deps/OrbitControls.js"></script> -->
-<!-- <script src="deps/PointerLockControls.js"></script> -->
 <script src="deps/zlib.js"></script>
 <script src="deps/png.js"></script>
-<!-- <script src="deps/stats.min.js"></script> -->
-
-<!-- own code-->
 <script src="scene_spec.js"></script>
-
 <script src="fetch_asset.js"></script>
 <script src="create_texture.js"></script>
 <script src="prepare_payload.js"></script>
 <script src="populate_texture.js"></script>
-<script src="texture_manager.js"></script>
 <script src="worker_pool.js"></script>
 <script src="globals.js"></script>
 <script src="utils.js"></script>
@@ -213,18 +200,9 @@ Click me to start benchmarking when the frame-rate is behaving reasonably.
 <script src="viewdependency.js"></script>
 <script src="defaultposes.js"></script>
 <script src="benchmark.js"></script>
+
+<!-- Finally, load your index.js as an ES module -->
 <script type="module" src="index.js"></script>
-
-
-<!--
-   TODO das hier muss geändert werden
-   <script src="index.js"></script>
-<script src="https://unpkg.com/three@0.113.1/examples/jsm/WebGL.js"></script>
-<script src="https://unpkg.com/browse/three@0.113.1/examples/jsm/webxr/VRButton.js"></script>
-
-
--->
-
 
 </body>
 </html>
