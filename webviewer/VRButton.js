@@ -16,20 +16,21 @@ class VRButton {
 			let currentSession = null;
 
 			async function onSessionStarted(session) {
-				console.log('VR session started:', session);
 				session.addEventListener('end', onSessionEnded);
 				await renderer.xr.setSession(session);
 				button.textContent = 'EXIT VR';
 				currentSession = session;
-				console.log('Session successfully started.');
 			}
 
 			function onSessionEnded() {
-				console.log('VR session ended.');
-				currentSession.removeEventListener('end', onSessionEnded);
+				if (currentSession) {
+					currentSession.removeEventListener('end', onSessionEnded);
+					currentSession = null;
+				}
 				button.textContent = 'ENTER VR';
-				currentSession = null;
+				console.log('XR session ended.');
 			}
+
 
 			// Style and interaction setup
 			button.style.display = '';
@@ -53,7 +54,7 @@ class VRButton {
 			button.onclick = () => {
 				if (currentSession === null) {
 					console.log('Requesting immersive VR session...');
-					const sessionInit = { optionalFeatures: ['local-floor', 'bounded-floor'] };
+					const sessionInit = { optionalFeatures: ['local-floor', 'bounded-floor'] }; // Remove unsupported 'layers'
 					navigator.xr
 						.requestSession('immersive-vr', sessionInit)
 						.then(onSessionStarted)
