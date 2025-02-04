@@ -23,94 +23,101 @@
  *   current submodel.
  */
 function setupInitialCameraPose(dirUrl, submodelCenter) {
-  console.log('Setting up initial camera pose...');
+    initialPoses = {
+        'default': {
+            'position': [0.0, 0.0, 0.0],
+            'lookat': [0.0, 0.0, 1.0],
+        },
+        'gardenvase': {
+            'position':
+                [-1.1868985500525444, 0.1898527233835131, -0.04923970470097733],
+            'lookat':
+                [-0.05581392405861873, -0.40202760746449473, 0.02985343723310108],
+        },
+        'stump': {
+            'position': [0.0, 0.4, -0.8],
+            'lookat': [0.0, -0.3, 0.0],
+        },
+        'flowerbed': {
+            'position':
+                [-0.02402388218043944, 0.11825367482140309, 0.907525093384825],
+            'lookat':
+                [0.016306507293821822, -0.15676691106539536, -0.016192691610482132],
+        },
+        'treehill': {
+            'position': [-0.70994804046872, 0.19435986647308223, 0.30833533637897453],
+            'lookat':
+                [0.06327294888291587, -0.13299740290200024, 0.0037554887097183934],
+        },
+        'bicycle': {
+            'position':
+                [-0.4636408064933045, 0.49624791762954734, 0.8457540259646037],
+            'lookat':
+                [0.017170160491904368, -0.24649043500978007, -0.07787524806850904],
+        },
+        'kitchenlego': {
+            'position':
+                [-0.5872864419408019, 0.05633623000443683, -0.9472239198227385],
+            'lookat': [0.07177184299031553, -0.4020277194862108, 0.04850453170234236],
+        },
+        'fulllivingroom': {
+            'position':
+                [1.1539572663654272, -0.006785278327404387, -0.0972986385811351],
+            'lookat':
+                [-0.05581392405861873, -0.40202760746449473, 0.02985343723310108],
+        },
+        'kitchencounter': {
+            'position':
+                [-0.7006764413546107, 0.2255633917824672, -0.46941182833135847],
+            'lookat': [0.13197415755218864, -0.4020278046227117, 0.09221809216932579],
+        },
+        'officebonsai': {
+            'position': [-0.4773314920559294, 0.05409730603092788, 1.014304107335418],
+            'lookat':
+                [0.11970974858222336, -0.40426664345968033, -0.019801655674420764],
+        },
+    };
 
-  // Validate gCamera and gRenderer
-  if (!gCamera) {
-    console.error('Camera (gCamera) is not initialized!');
-    return;
-  }
-  if (!gRenderer) {
-    console.error('Renderer (gRenderer) is not initialized!');
-    return;
-  }
-
-  // Ensure camera controls are initialized
-  if (!gOrbitControls && !gMapControls) {
-    console.warn('No camera controls found. Initializing default orbit controls...');
-    gOrbitControls = new THREE.OrbitControls(gCamera, gRenderer.domElement);
-    gOrbitControls.target.set(0, 0, 0); // Default look-at target
-    gOrbitControls.update();
-  }
-
-  const initialPoses = {
-    'default': {
-      'position': [0.0, 0.0, 0.0],
-      'lookat': [0.0, 0.0, 1.0],
-    },
-    'gardenvase': {
-      'position': [-1.1869, 0.1899, -0.0492],
-      'lookat': [-0.0558, -0.4020, 0.0299],
-    },
-    'stump': {
-      'position': [0.0, 0.4, -0.8],
-      'lookat': [0.0, -0.3, 0.0],
-    },
-    'flowerbed': {
-      'position': [-0.0240, 0.1183, 0.9075],
-      'lookat': [0.0163, -0.1568, -0.0162],
-    },
-    'treehill': {
-      'position': [-0.7099, 0.1944, 0.3083],
-      'lookat': [0.0633, -0.1330, 0.0038],
-    },
-    'bicycle': {
-      'position': [-0.4636, 0.4962, 0.8458],
-      'lookat': [0.0172, -0.2465, -0.0779],
-    },
-    'kitchenlego': {
-      'position': [-0.5873, 0.0563, -0.9472],
-      'lookat': [0.0718, -0.4020, 0.0485],
-    },
-    'fulllivingroom': {
-      'position': [1.1540, -0.0068, -0.0973],
-      'lookat': [-0.0558, -0.4020, 0.0299],
-    },
-    'kitchencounter': {
-      'position': [-0.7007, 0.2256, -0.4694],
-      'lookat': [0.1320, -0.4020, 0.0922],
-    },
-    'officebonsai': {
-      'position': [-0.4773, 0.0541, 1.0143],
-      'lookat': [0.1197, -0.4043, -0.0198],
-    },
-  };
-
-  function setCameraPose(pose) {
-    gCamera.position.set(
-        pose['position'][0] + submodelCenter.x,
-        pose['position'][1] + submodelCenter.y,
-        pose['position'][2] + submodelCenter.z
-    );
-    gOrbitControls.target.set(
-        pose['lookat'][0] + submodelCenter.x,
-        pose['lookat'][1] + submodelCenter.y,
-        pose['lookat'][2] + submodelCenter.z
-    );
-    gOrbitControls.update();
-  }
-
-  // Default pose
-  setCameraPose(initialPoses['default']);
-  for (let sceneName in initialPoses) {
-    if (dirUrl.includes(sceneName)) {
-      console.log(`Applying camera pose for scene: ${sceneName}`);
-      setCameraPose(initialPoses[sceneName]);
-      break;
+    /**
+     * Quick helper function to set the lookat point regardless of camera
+     * controls.
+     * @param {number} x
+     * @param {number} y
+     * @param {number} z
+     */
+    function cameraLookAt(x, y, z) {
+        if (gOrbitControls) {
+            gOrbitControls.target.x = x;
+            gOrbitControls.target.y = y;
+            gOrbitControls.target.z = z;
+        } else if (gMapControls) {
+            gMapControls.target.x =
+                gCamera.position.x + (x - gCamera.position.x) * gCamera.near;
+            gMapControls.target.y =
+                gCamera.position.y + (y - gCamera.position.y) * gCamera.near;
+            gMapControls.target.z =
+                gCamera.position.z + (z - gCamera.position.z) * gCamera.near;
+        } else {
+            gCamera.lookAt(x, y, z);
+        }
     }
-  }
 
-  gCamera.updateProjectionMatrix();
-  console.log('Camera pose set successfully.');
+    function setCameraPose(d) {
+        gCamera.position.x = d['position'][0] + submodelCenter.x;
+        gCamera.position.y = d['position'][1] + submodelCenter.y;
+        gCamera.position.z = d['position'][2] + submodelCenter.z;
+        cameraLookAt(
+            d['lookat'][0] + submodelCenter.x,
+            d['lookat'][1] + submodelCenter.y,
+            d['lookat'][2] + submodelCenter.z);
+    }
+
+    setCameraPose(initialPoses['default']);
+    for (let sceneName in initialPoses) {
+        if (dirUrl.includes(sceneName)) {
+            setCameraPose(initialPoses[sceneName]);
+            break;
+        }
+    }
+    gCamera.updateProjectionMatrix();
 }
-
