@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="not working, switching to a different idea">
+    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="push to rey a different way">
       <change afterPath="$PROJECT_DIR$/teachers/bicycle/checkpoint_50000/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webviewer/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer/defaultposes.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/defaultposes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webviewer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webviewer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/index.js" afterDir="false" />
     </list>
@@ -119,7 +119,7 @@
       <workItem from="1737907495825" duration="14172000" />
       <workItem from="1738227845337" duration="13431000" />
       <workItem from="1738320196431" duration="9172000" />
-      <workItem from="1738664030988" duration="4456000" />
+      <workItem from="1738664030988" duration="10010000" />
     </task>
     <task id="LOCAL-00001" summary="commit fist part to get everything up to date">
       <option name="closed" value="true" />
@@ -209,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738324383936</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="push to rey a different way">
+      <option name="closed" value="true" />
+      <created>1738679865389</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1738679865389</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +242,7 @@
     <MESSAGE value="commit 5 part to get everything up to date" />
     <MESSAGE value="trying to integrate VR and a loading scene" />
     <MESSAGE value="not working, switching to a different idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="not working, switching to a different idea" />
+    <MESSAGE value="push to rey a different way" />
+    <option name="LAST_COMMIT_MESSAGE" value="push to rey a different way" />
   </component>
 </project>

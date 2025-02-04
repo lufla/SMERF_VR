@@ -1,0 +1,135 @@
+body {
+    font-family: Helvetica, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    background: #fff;
+    padding: 9px 6px 0 5px;
+    margin: 0;
+    text-align: center;
+}
+
+#error {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #444;
+    padding: 8px;
+    white-space: pre;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+#image-progress {
+    background: #000;
+    color: #fff;
+    opacity: 0.75;
+    padding: 5px;
+}
+
+#Loading {
+    position: absolute;
+    top: 12px;
+    left: 90px;
+}
+
+#Loading h4 {
+    margin: 0;
+}
+
+#loading-container {
+    width: 150px;
+    height: 150px;
+    padding: 0;
+    margin: -40px 0 0 -40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.loading-bgbox {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background-color: #ddd;
+}
+
+#topleft {
+    top: 5px;
+    left: 5px;
+}
+
+#bottomleft {
+    bottom: 5px;
+    left: 5px;
+}
+
+#topright {
+    top: 5px;
+    right: 5px;
+}
+
+#bottomright {
+    bottom: 5px;
+    right: 5px;
+}
+
+#loading-indicator {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 65px;
+    height: 65px;
+    background-color: #999;
+    animation-name: indicator;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes indicator {
+    0% {
+        top: 5px;
+        left: 5px;
+    }
+    25% {
+        top: 5px;
+        left: 80px;
+    }
+    50% {
+        top: 80px;
+        left: 80px;
+    }
+    75% {
+        top: 80px;
+        left: 5px;
+    }
+}
+
+#viewspacecontainer {
+    position: relative;
+    text-align: center;
+    display: none;
+    border: 2px solid #000;
+}
+
+/* Main MERF view */
+.view {
+    margin: auto;
+    overflow: hidden;
+    transform-origin: top left;
+    background: #fff;
+}
+
+#benchmark-stats {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#shader-editor {
+    display: block;
+    margin: 10px auto 0;
+}
