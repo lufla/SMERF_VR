@@ -1,3 +1,5 @@
+
+
 const NEEDS_NEW_SUBMODEL = -1;
 const LOADING = 0;
 const READY = 1;
@@ -532,7 +534,7 @@ async function loadScene(dirUrl, overrideParams) {
 }
 
 
-function initFromParameters() {
+async function initFromParameters() {
     const params = new URL(window.location.href).searchParams;
     const dirUrl = getRequiredParam(params, 'dir', 'dir is a required parameter.');
     let quality = params.get('quality');
@@ -550,7 +552,7 @@ function initFromParameters() {
     const view = setupView(fbData.frameBufferWidth, fbData.frameBufferHeight);
     const canvas = createCanvas(view);
     setupStats(view);
-    const gl = setupGLContext(canvas, params, overrideParams);
+    const gl = await setupGLContext(canvas, params, overrideParams);
     gRenderer = new THREE.WebGLRenderer({ canvas: canvas, context: gl });
 
     gCamera = new THREE.PerspectiveCamera(
@@ -563,6 +565,10 @@ function initFromParameters() {
     setupProgressiveRendering(view, fbData.lowResFactor);
     gRenderer.autoClear = false;
     gRenderer.setSize(view.offsetWidth, view.offsetHeight);
+    //TODO ADDED
+    gRenderer.xr.enabled = true;
+    document.body.appendChild(VRButton.createButton(gRenderer));
+
 
     if (!overrideParams.benchmark) {
         const mouseMode = params.get('mouseMode');
@@ -695,9 +701,15 @@ function setupView(width, height) {
 
 function createCanvas(view) {
     const canvas = document.createElement('canvas');
+    // Set the canvas element’s attributes and styles to match the view’s dimensions.
+    canvas.width = view.offsetWidth;
+    canvas.height = view.offsetHeight;
+    canvas.style.width = view.offsetWidth + 'px';
+    canvas.style.height = view.offsetHeight + 'px';
     view.appendChild(canvas);
     return canvas;
 }
+
 
 function setupStats(view) {
     const viewSpace = document.querySelector('.viewspace');
@@ -711,7 +723,7 @@ function setupStats(view) {
     gStats.showPanel(0);
 }
 
-function setupGLContext(canvas, params, overrideParams) {
+async function setupGLContext(canvas, params, overrideParams) {
     const benchmarkParam = params.get('benchmark');
     const gl = canvas.getContext('webgl2', {
         powerPreference: 'high-performance',
@@ -724,8 +736,13 @@ function setupGLContext(canvas, params, overrideParams) {
         preserveDrawingBuffer: overrideParams.benchmark && benchmarkParam.toLowerCase() === 'quality'
     });
     gl.pixelStorei(gl.UNPACK_ALIGNMENT, 1);
+    if (gl.makeXRCompatible) {
+        // IMPORTANT: Await it, but DO NOT assign its result to gl!
+        await gl.makeXRCompatible();
+    }
     return gl;
 }
+
 
 function renderNextFrame(t) {
     garbageCollectSubmodelPayloads();
@@ -759,12 +776,11 @@ function renderNextFrame(t) {
         renderProgressively();
     }
     gStats.update();
-    (gBenchmark ? benchmarkPerformance(requestAnimationFrame) : requestAnimationFrame)(renderNextFrame);
+    (gBenchmark ? benchmarkPerformance(gRenderer.setAnimationLoop) : gRenderer.setAnimationLoop)(renderNextFrame);
 }
 
-function start() {
-    initFromParameters();
+async function start() {
+    await initFromParameters();
     addHandlers();
 }
-
 window.onload = start;
