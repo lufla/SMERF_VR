@@ -183,7 +183,6 @@ Hit CTRL-C to stop the server
 [2024-12-04T10:44:39.667Z]  "GET /deps/png.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
 [2024-12-04T10:44:39.668Z]  "GET /prepare_payload.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
 [2024-12-04T10:44:39.669Z]  "GET /fetch_asset.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
-[2024-12-04T10:44:39.672Z]  "GET /texture_manager.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
 [2024-12-04T10:44:39.673Z]  "GET /create_texture.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
 [2024-12-04T10:44:39.674Z]  "GET /worker_pool.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"
 [2024-12-04T10:44:39.674Z]  "GET /globals.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0"

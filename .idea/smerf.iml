@@ -9,6 +9,9 @@
     <orderEntry type="library" name="three" level="application" />
     <orderEntry type="library" name="browse" level="application" />
     <orderEntry type="library" name="VRButton" level="application" />
+    <orderEntry type="library" name="three.js" level="application" />
+    <orderEntry type="library" name="webxr-polyfill" level="application" />
+    <orderEntry type="library" name="aframe" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="GOOGLE" />

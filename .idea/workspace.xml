@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="simplified the code, to now work on the main issue again">
+    <list default="true" id="66a6a5c1-3149-4769-bce2-0b69365a1c48" name="Changes" comment="prommesing: Es will in VR gehen und dann kommen Warnungen, keine Fehler">
       <change afterPath="$PROJECT_DIR$/teachers/bicycle/checkpoint_50000/checkpoint" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tester/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smerf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/smerf.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webviewer/VRButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/VRButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DOCS/SMERF output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DOCS/SMERF output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/RustIn3D.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/cert.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/key.pem" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/tree_tester/VRButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/tree_tester/VRButton.js:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/tree_tester/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webtester/tree_tester/three.module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/benchmark.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/benchmark.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webviewer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webviewer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/progressive.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/progressive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/texture_manager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webviewer/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/webviewer/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -33,12 +50,12 @@
     &quot;assignee&quot;: &quot;lufla&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lufla/SMERF_VR.git",
-    "accountId": "3b17cd65-015d-4ef3-9b93-edb7859deeb3"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lufla/SMERF_VR.git&quot;,
+    &quot;accountId&quot;: &quot;3b17cd65-015d-4ef3-9b93-edb7859deeb3&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -49,10 +66,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.index.html.executor": "Run",
+    "LaTeX.testing.executor": "Run",
     "Node.js.index.js.executor": "Run",
     "Python.train.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "webviewer-VRButtonIntegrateion",
     "last_opened_file_path": "//wsl.localhost/Ubuntu/home/flad/smerf",
@@ -119,7 +139,13 @@
       <workItem from="1737907495825" duration="14172000" />
       <workItem from="1738227845337" duration="13431000" />
       <workItem from="1738320196431" duration="9172000" />
-      <workItem from="1738664030988" duration="14693000" />
+      <workItem from="1738664030988" duration="15086000" />
+      <workItem from="1739122262203" duration="4224000" />
+      <workItem from="1739126897937" duration="5017000" />
+      <workItem from="1740230598548" duration="9715000" />
+      <workItem from="1740244313516" duration="5609000" />
+      <workItem from="1740250358740" duration="1678000" />
+      <workItem from="1741353885867" duration="7504000" />
     </task>
     <task id="LOCAL-00001" summary="commit fist part to get everything up to date">
       <option name="closed" value="true" />
@@ -225,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738685673693</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="prommesing: Es will in VR gehen und dann kommen Warnungen, keine Fehler">
+      <option name="closed" value="true" />
+      <created>1738690314659</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1738690314659</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +286,7 @@
     <MESSAGE value="not working, switching to a different idea" />
     <MESSAGE value="push to rey a different way" />
     <MESSAGE value="simplified the code, to now work on the main issue again" />
-    <option name="LAST_COMMIT_MESSAGE" value="simplified the code, to now work on the main issue again" />
+    <MESSAGE value="prommesing: Es will in VR gehen und dann kommen Warnungen, keine Fehler" />
+    <option name="LAST_COMMIT_MESSAGE" value="prommesing: Es will in VR gehen und dann kommen Warnungen, keine Fehler" />
   </component>
 </project>

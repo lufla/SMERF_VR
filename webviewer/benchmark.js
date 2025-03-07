@@ -121,12 +121,15 @@ function loadBenchmarkCameras(filenameToLinkTranslator) {
 }
 
 /**
- * Sets the pose & projection matrix of the camera re-render a benchmark image.
+ * Sets the pose & projection matrix of the camera to re-render a benchmark image.
+ * This version updates the base camera (gCamera). In VR mode, since the XR camera
+ * is derived from gCamera, updating gCamera updates the XR camera as well.
  * @param {!THREE.PerspectiveCamera} camera The camera whose pose and projection
  *     matrix we're changing.
- * @param {number} index The index of the benchmark image want to re-render.
+ * @param {number} index The index of the benchmark image we want to re-render.
  */
 function setBenchmarkCameraPose(camera, index) {
+  // Update the base camera even in VR mode.
   camera.position.fromArray(gBenchmarkCameras[index]['position']);
   camera.setRotationFromMatrix(
       new THREE.Matrix4().fromArray(gBenchmarkCameras[index]['rotation']));
@@ -170,43 +173,37 @@ function formatTimestampAsString() {
       `_${hours}${minutes}`;
 }
 
+
 /**
  * Benchmarks performance by rendering test images while measuring frame times.
  *
- * You can use this function by calling it after all webgl calls have been
- * completed for a frame, just before the next call to requestAnimationFrame().
+ * This function uses the normal desktop timing when no XR session is active.
+ * In VR mode, the screenshot capture is skipped since the XRWebGLLayer's framebuffer
+ * is not available via toDataURL().
  *
- * Note however that this function has been designed to keep the GPU cool and
- * might want to delay the call to requestAnimationFrame() by a certain delay.
- * This is why defaultScheduleFrame is a parameter and why the return values
- * is a similar function (that may have an additional delay inserted).
- *
- * @param {!object} defaultScheduleFrame The function the renderer normally
- *   uses to schedule the next frame for rendering.
+ * @param {!object} defaultScheduleFrame The function the renderer normally uses
+ *   to schedule the next frame for rendering.
  * @returns {!object}
  */
 function benchmarkPerformance(defaultScheduleFrame) {
-  // These constants were tuned to get repeatable results in the bicycle scene
-  // on an iPhone 15 Pro and a 2019 16" MacBook Pro with an AMD Radeon 5500M.
+  // These constants were tuned for specific devices; adjust as needed.
   const kCoolDownSeconds = 0.0;
   const kMaxFramesPerCamera = Math.max(4, Math.ceil(100 / gFrameMult));
   const kNumFramesToDiscard = Math.max(2, Math.ceil(0.1 * kMaxFramesPerCamera));
 
-  // We start benchmarking only after gLastFrame has first been set.
   if (isLoading()) {
     return defaultScheduleFrame;
   }
 
-  // We use the first frame after loading the scene to set up the
-  // benchmarking state and cool the GPU down.
+  // Initialize benchmarking on the first frame after loading.
   if (!gBenchmarkTimestamps && !gIsCoolingDown) {
+    // In both VR and non-VR, update the base camera.
     setBenchmarkCameraPose(gCamera, 0);
     gBenchmarkTimestamps = [];
 
     if (kCoolDownSeconds > 0.0) {
       clearBenchmarkStats();
-      addBenchmarkRow(`Cooling the GPU down for ${
-          kCoolDownSeconds} seconds before benchmarking...`);
+      addBenchmarkRow(`Cooling the GPU down for ${kCoolDownSeconds} seconds before benchmarking...`);
       gIsCoolingDown = true;
       requestAnimationFrame(cooldownFrame);
       return () => {
@@ -232,43 +229,38 @@ function benchmarkPerformance(defaultScheduleFrame) {
 
   gBenchmarkTimestamps.push(window.performance.now());
 
-  // Let the default frame scheduler proceed if we're still gathering frames.
   if (gBenchmarkTimestamps.length < kMaxFramesPerCamera) {
     return defaultScheduleFrame;
   }
 
-  if (gSaveBenchmarkFrames) {
-    frameAsPng = gRenderer.domElement.toDataURL('image/png');
+  // In non-VR mode, capture a screenshot. In VR mode, skip capture.
+  if (!gRenderer.xr.isPresenting) {
+    let frameAsPng = gRenderer.domElement.toDataURL('image/png');
     saveAs(frameAsPng, digits(gBenchmarkCameraIndex, 4) + '.png');
+  } else {
+    console.log('XR mode active: skipping screenshot capture.');
   }
 
-  // Now that we have enough frames we can compute frame-time statistics.
   let benchmarkTimestamps = gBenchmarkTimestamps.slice(kNumFramesToDiscard);
   const numBenchmarkFrames = benchmarkTimestamps.length;
   const firstFrameTimestamp = benchmarkTimestamps[0];
   const lastFrameTimestamp = benchmarkTimestamps.pop();
-  let meanTime = (lastFrameTimestamp - firstFrameTimestamp) /
-      (gFrameMult * (numBenchmarkFrames - 1));
+  let meanTime = (lastFrameTimestamp - firstFrameTimestamp) / (gFrameMult * (numBenchmarkFrames - 1));
   gFrameTimes.push(meanTime);
 
-  // Report them in the benchmark console.
-  addBenchmarkRow(`${gBenchmarkCameraIndex} ; ${firstFrameTimestamp} ; ${
-      lastFrameTimestamp} ; ${meanTime}`);
+  addBenchmarkRow(`${gBenchmarkCameraIndex} ; ${firstFrameTimestamp} ; ${lastFrameTimestamp} ; ${meanTime}`);
 
-  // No more cameras: stop benchmarking, and store the results as a CSV file.
   if (++gBenchmarkCameraIndex >= gBenchmarkCameras.length) {
-    console.log(gFrameTimes.reduce((a, b) => a + b, 0) / gFrameTimes.length);
+    console.log("Average frame time: " + gFrameTimes.reduce((a, b) => a + b, 0) / gFrameTimes.length);
     gBenchmark = false;
-    const csvBlob =
-        new Blob([getBenchmarkStats()], {type: 'text/plain;charset=utf-8'});
+    const csvBlob = new Blob([getBenchmarkStats()], {type: 'text/plain;charset=utf-8'});
     const csvName = gBenchmarkMethodName + '_' + gBenchmarkSceneName + '_' +
         'frameMult_' + gFrameMult + '_' + formatTimestampAsString() + '.csv';
     saveAs(csvBlob, csvName);
     return defaultScheduleFrame;
   }
 
-  // Otherwise, set things up for benchmarking the next camera pose and sleep
-  // for the cooldown time to avoid biased results from thermal throttling.
+  // Prepare for the next camera pose.
   gBenchmarkTimestamps = [];
   setBenchmarkCameraPose(gCamera, gBenchmarkCameraIndex);
   if (kCoolDownSeconds > 0.0) {

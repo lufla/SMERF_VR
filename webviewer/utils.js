@@ -249,7 +249,7 @@ function submodelAssetPath(submodelId, assetName) {
   if (gUseSubmodel) {
     const smIdx = String(submodelId).padStart(3, '0');
     prefix = `../sm_${smIdx}`;
-    if (assetName == undefined) {
+    if (assetName === undefined) {
       return prefix;
     }
     return `${prefix}/${assetName}`;
@@ -262,7 +262,7 @@ function submodelAssetPath(submodelId, assetName) {
  * Determines appropriate submodel index for a position in world coordinates.
  */
 function positionToSubmodel(xyz, sceneParams) {
-  if (gUseSubmodel == false) {
+  if (gUseSubmodel === false) {
     return 0;
   }
   if (gSubmodelForceIndex >= 0) {
@@ -284,7 +284,7 @@ function positionToSubmodel(xyz, sceneParams) {
  * Computes center of submodel in world coordinates.
  */
 function submodelCenter(submodelId, sceneParams) {
-  if (gUseSubmodel == false) {
+  if (gUseSubmodel === false) {
     return new THREE.Vector3(0.0, 0.0, 0.0);
   }
 
@@ -450,7 +450,7 @@ function mergeSparseGridDensity(asset) {
  */
 function getFieldOrDefault(obj, field, default_) {
   let result = obj[field];
-  if (result == undefined) {
+  if (result === undefined) {
     return default_;
   }
   return result;
